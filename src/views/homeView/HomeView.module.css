@@ -1,0 +1,21 @@
+.balloonWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: auto;
+  color: var(--color-heading);
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 90%;
+    top: 5%;
+  }
+}
