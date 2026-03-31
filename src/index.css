@@ -1,34 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --color-background: #f8f8f8;
-  --color-text: #222222;
-  --color-heading: #181818;
-
-  --color-link: rgb(213, 55, 105);
-  --color-link-hover: rgba(213, 55, 105, 0.2);
-
-  --space-sm: 8px;
-  --space-lg: 32px;
-  --section-gap: 160px;
-
-  --font-size-base: 15px;
-  --line-height-base: 1.6;
-}
-
-@layer base {
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-    margin: 0;
-  }
-
-  body {
-    font-family: Inter, system-ui, sans-serif;
-    background: var(--color-background);
-    color: var(--color-text);
-  }
-}
+@import "tailwindcss";
+@import "./styles/global/tokens.css";
+@import "./styles/global/base.css";
