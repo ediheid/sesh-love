@@ -14,7 +14,8 @@ const HomeView = () => {
           alt={balloonAlt}
           className="block w-auto max-w-[90vw] max-h-[90vh] h-auto"
         />
-        <Svg name="comingSoon" className={styles.logo} />
+        <Svg name="comingSoon" className={styles.logo} decorative />
+        <h1 className="sr-only">Coming soon</h1>
       </div>
     </main>
   );
