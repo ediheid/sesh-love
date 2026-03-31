@@ -6,26 +6,37 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#f8f8f8",
-        text: "#222222",
-        heading: "#181818",
+        primary: "var(--color-primary)",
+        "primary-hover": "var(--color-primary-hover)",
 
-        link: "rgb(213, 55, 105)",
-        "link-hover": "rgba(213, 55, 105, 0.2)",
+        danger: "var(--color-danger)",
+        accent: "var(--color-accent)",
+
+        background: "var(--color-background)",
+        surface: "var(--color-surface)",
+
+        text: "var(--color-text)",
+        heading: "var(--color-heading)",
+
+        border: "var(--color-border)",
+        highlight: "var(--color-highlight)",
+
+        link: "var(--color-link)",
+        "link-hover": "var(--color-link-hover)",
       },
 
       spacing: {
-        sm: "8px",
-        lg: "32px",
-        section: "160px",
+        sm: "var(--space-sm)",
+        lg: "var(--space-lg)",
+        section: "var(--section-gap)",
       },
 
       fontSize: {
-        base: "15px",
+        base: "var(--font-size-base)",
       },
 
       lineHeight: {
-        base: "1.6",
+        base: "var(--line-height-base)",
       },
 
       fontFamily: {

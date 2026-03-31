@@ -1,0 +1,69 @@
+:root {
+  /* =========================
+       RAW PALETTE
+    ========================= */
+
+  /* Reds / brand */
+  --red-500: #f20732;
+  --red-400: #f22e52;
+  --red-700: #d90707;
+
+  /* Original pink */
+  /* todo: do I want this?! */
+  --pink-original: #d53769;
+  --pink-original-alpha: #d5376933;
+
+  /* Neutrals */
+  --gray-100: #f2f2f2;
+  --black-900: #0d0d0d;
+
+  /* Soft / muted */
+  --rose-100: #f2c7bd;
+  --rose-300: #f26363;
+
+  /* =========================
+       SEMANTIC TOKENS
+    ========================= */
+
+  /* Brand */
+  --color-primary: var(--red-500);
+  --color-primary-hover: var(--red-400);
+
+  /* Optional: use your original pink where needed */
+  --color-brand-original: var(--pink-original);
+
+  /* States */
+  --color-danger: var(--red-700);
+  --color-accent: var(--rose-300);
+
+  /* Backgrounds */
+  --color-background: var(--gray-100);
+  --color-surface: #ffffff;
+
+  /* Text */
+  --color-text: var(--black-900);
+  --color-heading: var(--black-900);
+
+  /* UI */
+  --color-border: var(--gray-100);
+  --color-highlight: var(--rose-100);
+
+  /* Links */
+  --color-link: var(--color-primary);
+  --color-link-hover: var(--color-primary-hover);
+
+  /* =========================
+       SPACING
+    ========================= */
+
+  --space-sm: 8px;
+  --space-lg: 32px;
+  --section-gap: 160px;
+
+  /* =========================
+       TYPOGRAPHY
+    ========================= */
+
+  --font-size-base: 15px;
+  --line-height-base: 1.6;
+}
