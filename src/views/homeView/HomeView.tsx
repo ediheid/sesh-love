@@ -8,7 +8,7 @@ const HomeView = () => {
     "A shiny red heart-shaped balloon with a pale pink string against a white background.";
 
   return (
-    <main className="flex justify-center items-center h-screen">
+    <section className="min-h-screen flex items-center justify-center">
       <div className={styles.balloonWrapper}>
         <Image
           src={balloon}
@@ -18,10 +18,12 @@ const HomeView = () => {
           variant="hero"
           className="block w-auto max-w-[90vw] max-h-[90vh] h-auto"
         />
+
         <Svg name="logo" className={styles.logo} decorative />
+
         <h1 className="sr-only">Sesh</h1>
       </div>
-    </main>
+    </section>
   );
 };
 
