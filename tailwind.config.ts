@@ -31,24 +31,8 @@ const config: Config = {
         section: "var(--section-gap)",
       },
 
-      fontSize: {
-        base: "var(--font-size-base)",
-      },
-
-      lineHeight: {
-        base: "var(--line-height-base)",
-      },
-
       fontFamily: {
-        sans: [
-          "Inter",
-          "system-ui",
-          "-apple-system",
-          "Segoe UI",
-          "Roboto",
-          "sans-serif",
-        ],
-        heading: ["Inter", "system-ui", "sans-serif"],
+        sans: ["var(--font-sans)"],
       },
     },
   },

@@ -53,17 +53,24 @@
   --color-link-hover: var(--color-primary-hover);
 
   /* =========================
-       SPACING
+       LAYOUT TOKENS
     ========================= */
 
-  --space-sm: 8px;
-  --space-lg: 32px;
-  --section-gap: 160px;
+  --layout-container: 1200px;
+  --layout-section: 96px;
+  --layout-stack: 16px;
+  --layout-stack-lg: 32px;
+  --layout-page-padding: 24px;
+
+  /* layout Examples */
+  /* <div className="max-w-[var(--layout-container)] mx-auto px-[var(--layout-page-padding)]"> */
+  /* <section className="py-[var(--layout-section)]"> */
+  /* <div className="flex flex-col gap-[var(--layout-stack)]"> */
 
   /* =========================
        TYPOGRAPHY
     ========================= */
 
-  --font-size-base: 15px;
-  --line-height-base: 1.6;
+  --font-sans: "Atkinson Hyperlegible", system-ui, -apple-system, Segoe UI,
+    Roboto, sans-serif;
 }
