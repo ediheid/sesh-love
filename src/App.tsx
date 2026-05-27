@@ -1,6 +1,9 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import NavBar from "./components/navigation/NavBar";
 import HomeView from "./views/homeView/HomeView";
+import WorkshopsView from "./views/WorkshopsView";
+import TrainingsView from "./views/TrainingsView";
+import ContactView from "./views/ContactView";
 
 function App() {
   return (
@@ -12,18 +15,9 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<HomeView />} />
-          <Route
-            path="/workshops"
-            element={<div>this will be workshops view</div>}
-          />
-          <Route
-            path="/training"
-            element={<div>this will be training view</div>}
-          />
-          <Route
-            path="/contact"
-            element={<div>this will be contact view</div>}
-          />
+          <Route path="/workshops" element={<WorkshopsView />} />
+          <Route path="/training" element={<TrainingsView />} />
+          <Route path="/contact" element={<ContactView />} />
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

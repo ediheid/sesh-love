@@ -30,7 +30,7 @@ const NavBar = () => {
       )}
 
       <button
-        className="text-2xl md:text-3xl hover:opacity-70 transition"
+        className="text-2xl md:text-3xl hover:opacity-70 transition cursor-pointer"
         onClick={() => setNavOpen(true)}
       >
         menu

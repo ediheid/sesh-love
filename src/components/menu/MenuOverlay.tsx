@@ -38,7 +38,10 @@ const MenuOverlay = ({ navOpen, onNavClose }: Props) => {
         `}
       >
         <div className="flex justify-end p-6">
-          <button onClick={onNavClose} className="focus:outline-none">
+          <button
+            onClick={onNavClose}
+            className="focus:outline-none cursor-pointer"
+          >
             close
           </button>
         </div>
@@ -48,12 +51,12 @@ const MenuOverlay = ({ navOpen, onNavClose }: Props) => {
             workshops
           </NavLink>
           <NavLink to="/training" onClick={onNavClose}>
-            training
+            tarining
           </NavLink>
           <NavLink to="/contact" onClick={onNavClose}>
             contact
           </NavLink>
-          <NavLink to="/home" onClick={onNavClose}>
+          <NavLink to="/" onClick={onNavClose}>
             home
           </NavLink>
         </nav>
