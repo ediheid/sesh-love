@@ -56,7 +56,7 @@ const MenuOverlay = ({ navOpen, onNavClose }: Props) => {
             workshops
           </NavLink>
           <NavLink to="/training" onClick={onNavClose}>
-            tarining
+            training
           </NavLink>
           <NavLink to="/contact" onClick={onNavClose}>
             contact
