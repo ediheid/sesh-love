@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 type Props = {
   navOpen: boolean;
   onNavClose: () => void;
@@ -28,14 +30,10 @@ const MenuOverlay = ({ navOpen, onNavClose }: Props) => {
         className={`
           absolute top-0 right-0
           h-full w-full lg:w-1/2
-
           bg-(--color-primary)
-
           overflow-hidden
           will-change-transform
-
           transition-transform duration-200 ease-out
-
           ${navOpen ? "translate-x-0" : "translate-x-[101%]"}
         `}
       >
@@ -46,9 +44,18 @@ const MenuOverlay = ({ navOpen, onNavClose }: Props) => {
         </div>
 
         <nav className="flex flex-col gap-6 p-6 text-lg text-white">
-          <a href="/">Home</a>
-          <a href="/">About</a>
-          <a href="/">Contact</a>
+          <NavLink to="/workshops" onClick={onNavClose}>
+            workshops
+          </NavLink>
+          <NavLink to="/training" onClick={onNavClose}>
+            tarining
+          </NavLink>
+          <NavLink to="/contact" onClick={onNavClose}>
+            contact
+          </NavLink>
+          <NavLink to="/home" onClick={onNavClose}>
+            home
+          </NavLink>
         </nav>
       </aside>
     </div>
