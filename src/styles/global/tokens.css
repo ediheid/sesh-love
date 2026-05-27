@@ -27,7 +27,8 @@
 
   /* Brand */
   --color-primary: var(--red-500);
-  --color-primary-hover: var(--red-400);
+  --color-primary-hover: var(--red-500);
+  --color-icon-hover: var(--rose-300);
 
   /* Optional: use your original pink where needed */
   --color-brand-original: var(--pink-original);

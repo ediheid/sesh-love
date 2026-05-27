@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import Svg from "../../components/ui/svgs/Svgs";
 
 type Props = {
   navOpen: boolean;
@@ -38,16 +39,20 @@ const MenuOverlay = ({ navOpen, onNavClose }: Props) => {
         `}
       >
         <div className="flex justify-end p-6">
-          <button
-            onClick={onNavClose}
-            className="focus:outline-none cursor-pointer"
-          >
-            close
+          <button onClick={onNavClose} aria-label="Close menu">
+            <Svg
+              name="closeSVG"
+              className="text-[var(--color-text)] hover:text-[var(--color-icon-hover)] transition-colors duration-200"
+            />
           </button>
         </div>
 
         <nav className="flex flex-col gap-6 p-6 text-lg text-white">
-          <NavLink to="/workshops" onClick={onNavClose}>
+          <NavLink
+            to="/workshops"
+            onClick={onNavClose}
+            className="cursor-pointer"
+          >
             workshops
           </NavLink>
           <NavLink to="/training" onClick={onNavClose}>
