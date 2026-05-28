@@ -39,7 +39,11 @@ const MenuOverlay = ({ navOpen, onNavClose }: Props) => {
         `}
       >
         <div className="flex justify-end p-6">
-          <button onClick={onNavClose} aria-label="Close menu">
+          <button
+            onClick={onNavClose}
+            aria-label="Close menu"
+            className="cursor-pointer"
+          >
             <Svg
               name="closeSVG"
               className="text-[var(--color-text)] hover:text-[var(--color-icon-hover)] transition-colors duration-200"
@@ -48,11 +52,7 @@ const MenuOverlay = ({ navOpen, onNavClose }: Props) => {
         </div>
 
         <nav className="flex flex-col gap-6 p-6 text-lg text-white">
-          <NavLink
-            to="/workshops"
-            onClick={onNavClose}
-            className="cursor-pointer"
-          >
+          <NavLink to="/workshops" onClick={onNavClose}>
             workshops
           </NavLink>
           <NavLink to="/training" onClick={onNavClose}>
