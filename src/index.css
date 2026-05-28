@@ -1,3 +1,50 @@
-@import "tailwindcss";
 @import "./styles/global/tokens.css";
+
+@import "tailwindcss";
+
+@theme {
+  /* COLORS */
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+
+  --color-danger: var(--color-danger);
+  --color-accent: var(--color-accent);
+
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+
+  --color-text: var(--color-text);
+  --color-heading: var(--color-heading);
+
+  --color-border: var(--color-border);
+  --color-highlight: var(--color-highlight);
+
+  --color-link: var(--color-link);
+  --color-link-hover: var(--color-link-hover);
+
+  /* ICON */
+  --color-icon: var(--color-icon);
+  --color-icon-hover: var(--color-icon-hover);
+
+  /* INTERACTIVE */
+  --color-interactive: var(--color-interactive);
+  --color-interactive-hover: var(--color-interactive-hover);
+
+  --color-interactive-muted: var(--color-interactive-muted);
+  --color-interactive-muted-hover: var(--color-interactive-muted-hover);
+
+  /* motion */
+  --duration-fast: var(--duration-fast);
+  --duration-slow: var(--duration-slow);
+  --ease-standard: var(--ease-standard);
+
+  /* SPACING */
+  --spacing-sm: var(--spacing-sm);
+  --spacing-lg: var(--spacing-lg);
+  --spacing-section: var(--section-gap);
+
+  /* TYPOGRAPHY */
+  --font-sans: var(--font-sans);
+}
+
 @import "./styles/global/base.css";

@@ -1,21 +1,20 @@
-import { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
-import MenuOverlay from "../menu/MenuOverlay";
-import Svg from "../../components/ui/svgs/Svgs";
+import { useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
+import MenuOverlay from '../menu/MenuOverlay';
+import Svg from '../../components/ui/svgs/Svgs';
 
 const NavBar = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   const location = useLocation();
-  const isHome = location.pathname === "/";
+  const isHome = location.pathname === '/';
 
   return (
-    <nav className="w-full flex items-center justify-between px-4 py-4 md:py-6 md:px-6">
-      {/* // todo: decide on transition of hover and hover colour / opacity */}
+    <nav className="flex w-full items-center justify-between px-4 py-4 md:px-6 md:py-6">
       {isHome ? (
         <NavLink
           to="/contact"
-          className="text-2xl md:text-3xl hover:opacity-70 transition"
+          className="text-interactive hover:text-interactive-hover duration-fast ease-standard cursor-pointer text-2xl transition-colors md:text-3xl"
         >
           contact
         </NavLink>
@@ -23,14 +22,14 @@ const NavBar = () => {
         <NavLink
           to="/"
           aria-label="Sesh home"
-          className="flex items-center justify-center h-6 md:h-8 hover:opacity-70 transition"
+          className="text-interactive hover:text-interactive-hover duration-fast ease-standard cursor-pointer text-2xl transition-colors md:text-3xl"
         >
-          <Svg name="seshHero" decorative className="h-full w-auto block" />
+          <Svg name="seshHero" decorative className="block h-full w-auto" />
         </NavLink>
       )}
 
       <button
-        className="text-2xl md:text-3xl hover:opacity-70 transition cursor-pointer"
+        className="text-interactive hover:text-interactive-hover duration-fast ease-standard cursor-pointer text-2xl transition-colors md:text-3xl"
         onClick={() => setNavOpen(true)}
       >
         menu

@@ -45,6 +45,21 @@
   --color-text: var(--black-900);
   --color-heading: var(--black-900);
 
+  /* =========================
+   INTERACTIONS (HOVER / ACTIVE / FOCUS)
+========================= */
+
+  /* ICON COLORS */
+  --color-icon: var(--black-900);
+  --color-icon-hover: var(--rose-300);
+
+  /* Text / logo */
+  --color-interactive: var(--black-900);
+  --color-interactive-hover: var(--red-500);
+
+  --color-interactive-muted: var(--black-900);
+  --color-interactive-muted-hover: var(--rose-300);
+
   /* UI */
   --color-border: var(--gray-100);
   --color-highlight: var(--rose-100);
@@ -52,6 +67,21 @@
   /* Links */
   --color-link: var(--color-primary);
   --color-link-hover: var(--color-primary-hover);
+
+  /* FAST interactions (micro-interactions - text, logo, icons, buttons etc) */
+  --duration-fast: 100ms;
+
+  /* SLOW interactions (layout / overlays - menu, modals, loading in animations etc) */
+  --duration-slow: 300ms;
+
+  /* easing  */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+
+  /* ? implement? */
+  /* --duration-instant: 75ms;
+     --duration-fast: 100ms;
+     --duration-medium: 150ms;
+     --duration-slow: 250ms; */
 
   /* =========================
        LAYOUT TOKENS
