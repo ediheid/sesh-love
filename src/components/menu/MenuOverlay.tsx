@@ -8,7 +8,7 @@ type Props = {
 
 const MenuOverlay = ({ navOpen, onNavClose }: Props) => {
   const navItemClass =
-    'bg-nav-link hover:bg-nav-link-hover text-interactive text-nav-link-text hover:text-interactive-hover duration-fast ease-standard flex w-[80%] items-center justify-center text-menu-nav-sm md:text-menu-nav-md lg:text-menu-nav-lg transition-colors';
+    'bg-nav-link hover:bg-nav-link-hover text-interactive font-[var(--font-weight-bold)] text-nav-link-text hover:text-interactive-hover duration-fast ease-standard flex w-[80%] items-center justify-center text-menu-nav-sm md:text-menu-nav-md lg:text-menu-nav-lg transition-colors';
 
   const navItems = [
     { to: '/workshops', label: 'workshops' },
