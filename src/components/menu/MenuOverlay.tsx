@@ -7,6 +7,16 @@ type Props = {
 };
 
 const MenuOverlay = ({ navOpen, onNavClose }: Props) => {
+  const navItemClass =
+    'bg-nav-link hover:bg-nav-link-hover text-interactive text-nav-link-text hover:text-interactive-hover duration-fast ease-standard flex w-[80%] items-center justify-center text-menu-nav-sm md:text-menu-nav-md lg:text-menu-nav-lg transition-colors';
+
+  const navItems = [
+    { to: '/workshops', label: 'workshops' },
+    { to: '/training', label: 'training' },
+    { to: '/contact', label: 'contact' },
+    { to: '/', label: 'home' },
+  ];
+
   return (
     <div
       className={`duration-slow ease-standard fixed inset-0 z-50 transition-transform ${navOpen ? 'pointer-events-auto' : 'pointer-events-none'} `}
@@ -34,19 +44,22 @@ const MenuOverlay = ({ navOpen, onNavClose }: Props) => {
           </button>
         </div>
 
-        <nav className="flex flex-col gap-6 p-6 text-lg text-white">
-          <NavLink to="/workshops" onClick={onNavClose}>
-            workshops
-          </NavLink>
-          <NavLink to="/training" onClick={onNavClose}>
-            training
-          </NavLink>
-          <NavLink to="/contact" onClick={onNavClose}>
-            contact
-          </NavLink>
-          <NavLink to="/" onClick={onNavClose}>
-            home
-          </NavLink>
+        <div className="flex justify-center">
+          <Svg name="seshHero" decorative className="h-auto w-40 sm:w-50" />
+        </div>
+
+        <nav className="flex flex-col items-center gap-6 p-6 text-lg text-white">
+          {' '}
+          {navItems.map(({ to, label }) => (
+            <NavLink
+              key={to}
+              to={to}
+              onClick={onNavClose}
+              className={navItemClass}
+            >
+              {label}
+            </NavLink>
+          ))}
         </nav>
       </aside>
     </div>

@@ -21,10 +21,12 @@
   --rose-100: #f2c7bd;
   --rose-300: #f26363;
 
+  /* highlights */
+  --lilac-100: #acb7f2;
+
   /* =========================
        SEMANTIC TOKENS
     ========================= */
-
   /* Brand */
   --color-primary: var(--red-500);
   --color-primary-hover: var(--red-500);
@@ -56,17 +58,21 @@
   /* Text / logo */
   --color-interactive: var(--black-900);
   --color-interactive-hover: var(--red-500);
-
   --color-interactive-muted: var(--black-900);
   --color-interactive-muted-hover: var(--rose-300);
-
-  /* UI */
-  --color-border: var(--gray-100);
-  --color-highlight: var(--rose-100);
 
   /* Links */
   --color-link: var(--color-primary);
   --color-link-hover: var(--color-primary-hover);
+
+  /* Menu Navigation */
+  --color-nav-link: var(--black-900);
+  --color-nav-link-hover: var(--lilac-100);
+  --color-nav-link-text: var(--gray-100);
+  --color-nav-link-text-hover: var(--color-primary);
+  /* UI */
+  --color-border: var(--gray-100);
+  --color-highlight: var(--rose-100);
 
   /* FAST interactions (micro-interactions - text, logo, icons, buttons etc) */
   --duration-fast: 100ms;
@@ -102,6 +108,25 @@
        TYPOGRAPHY
     ========================= */
 
-  --font-sans: "Atkinson Hyperlegible", system-ui, -apple-system, Segoe UI,
-    Roboto, sans-serif;
+  --font-sans:
+    'Atkinson Hyperlegible', system-ui, -apple-system, Segoe UI, Roboto,
+    sans-serif;
+
+  /* =========================
+   TYPOGRAPHY SCALE
+========================= */
+
+  --text-xs: 0.875rem; /* 14px */
+  --text-sm: 1rem; /* 16px */
+  --text-md: 1.5rem;
+
+  --text-lg: 2rem; /* 32px */
+  --text-xl: 2.5rem; /* 40px */
+  --text-2xl: 3rem; /* 48px */
+  --text-3xl: 3.75rem; /* 60px */
+  --text-4xl: 4.5rem; /* 72px */
+
+  /* Font weights */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
 }

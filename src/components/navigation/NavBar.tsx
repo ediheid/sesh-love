@@ -14,7 +14,7 @@ const NavBar = () => {
       {isHome ? (
         <NavLink
           to="/contact"
-          className="text-interactive hover:text-interactive-hover duration-fast ease-standard cursor-pointer text-2xl transition-colors md:text-3xl"
+          className="text-interactive md:text-header-nav-lg hover:text-interactive-hover duration-fast ease-standard text-header-nav-sm cursor-pointer transition-colors"
         >
           contact
         </NavLink>
@@ -22,14 +22,14 @@ const NavBar = () => {
         <NavLink
           to="/"
           aria-label="Sesh home"
-          className="text-interactive hover:text-interactive-hover duration-fast ease-standard cursor-pointer text-2xl transition-colors md:text-3xl"
+          className="text-interactive md:text-header-nav-lg hover:text-interactive-hover duration-fast ease-standard text-header-nav-sm cursor-pointer transition-colors"
         >
           <Svg name="seshHero" decorative className="block h-full w-auto" />
         </NavLink>
       )}
 
       <button
-        className="text-interactive hover:text-interactive-hover duration-fast ease-standard cursor-pointer text-2xl transition-colors md:text-3xl"
+        className="text-interactive md:text-header-nav-lg hover:text-interactive-hover duration-fast ease-standard text-header-nav-sm cursor-pointer transition-colors"
         onClick={() => setNavOpen(true)}
       >
         menu

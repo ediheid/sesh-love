@@ -1,6 +1,6 @@
-@import "./styles/global/tokens.css";
+@import './styles/global/tokens.css';
 
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   /* COLORS */
@@ -19,9 +19,6 @@
   --color-border: var(--color-border);
   --color-highlight: var(--color-highlight);
 
-  --color-link: var(--color-link);
-  --color-link-hover: var(--color-link-hover);
-
   /* ICON */
   --color-icon: var(--color-icon);
   --color-icon-hover: var(--color-icon-hover);
@@ -29,9 +26,17 @@
   /* INTERACTIVE */
   --color-interactive: var(--color-interactive);
   --color-interactive-hover: var(--color-interactive-hover);
-
   --color-interactive-muted: var(--color-interactive-muted);
   --color-interactive-muted-hover: var(--color-interactive-muted-hover);
+
+  --color-link: var(--color-link);
+  --color-link-hover: var(--color-link-hover);
+
+  /* Menu Navigation */
+  --color-nav-link: var(--color-nav-link);
+  --color-nav-link-hover: var(--color-nav-link-hover);
+  --color-nav-link-text: var(--color-nav-link-text);
+  --color-nav-link-text-hover: var(--color-nav-link-text-hover);
 
   /* motion */
   --duration-fast: var(--duration-fast);
@@ -45,6 +50,28 @@
 
   /* TYPOGRAPHY */
   --font-sans: var(--font-sans);
+
+  --text-body: var(--text-sm);
+  --text-h2: var(--text-lg);
+  --text-h1: var(--text-xl);
+
+  /* header */
+  --text-header-nav-sm: var(--text-md);
+  --text-header-nav-lg: var(--text-lg);
+
+  /* menu */
+  --text-menu-nav-sm: var(--text-xl);
+  --text-menu-nav-md: var(--text-2xl);
+  --text-menu-nav-lg: var(--text-4xl);
+
+  /* Links */
+  --text-link: var(--text-sm);
+  --text-button: var(--text-sm);
+  --text-label: var(--text-xs);
+
+  /* Font weights */
+  --font-regular: var(--font-weight-regular);
+  --font-bold: var(--font-weight-bold);
 }
 
-@import "./styles/global/base.css";
+@import './styles/global/base.css';
