@@ -1,5 +1,6 @@
-import { NavLink } from 'react-router-dom';
+import MenuNavLink from './MenuNavLink';
 import Svg from '../../components/ui/svgs/Svgs';
+import { useLocation } from 'react-router-dom';
 
 type Props = {
   navOpen: boolean;
@@ -7,18 +8,16 @@ type Props = {
 };
 
 const MenuOverlay = ({ navOpen, onNavClose }: Props) => {
-  const navItemClass =
-    'bg-nav-link hover:bg-nav-link-hover text-interactive font-[var(--font-semibold)] text-nav-link-text hover:text-interactive-hover duration-fast ease-standard flex w-[80%] items-center justify-center text-menu-nav-sm md:text-menu-nav-md lg:text-menu-nav-lg transition-colors';
+  const location = useLocation();
 
   const navItems = [
     { to: '/workshops', label: 'workshops' },
     { to: '/training', label: 'training' },
     { to: '/contact', label: 'contact' },
-    { to: '/', label: 'home' },
+    ...(location.pathname !== '/' ? [{ to: '/', label: 'home' }] : []),
   ];
 
   return (
-    // todo: look if I can optimise and breakdown into components
     <div
       className={`duration-slow ease-standard fixed inset-0 z-50 transition-transform ${navOpen ? 'pointer-events-auto' : 'pointer-events-none'} `}
     >
@@ -30,7 +29,7 @@ const MenuOverlay = ({ navOpen, onNavClose }: Props) => {
 
       {/* Panel */}
       <aside
-        className={`bg-primary duration-slow ease-standard absolute top-0 right-0 h-full w-full overflow-hidden transition-transform will-change-transform lg:w-1/2 ${navOpen ? 'translate-x-0' : 'translate-x-[101%]'} `}
+        className={`bg-primary duration-slow ease-standard absolute top-0 right-0 flex h-full w-full flex-col transition-transform will-change-transform lg:w-1/2 ${navOpen ? 'translate-x-0' : 'translate-x-[101%]'} `}
       >
         <div className="flex justify-end p-6">
           <button
@@ -49,19 +48,30 @@ const MenuOverlay = ({ navOpen, onNavClose }: Props) => {
           <Svg name="seshHero" decorative className="h-auto w-40 sm:w-50" />
         </div>
 
-        <nav className="flex flex-col items-center gap-6 p-6 text-lg text-white">
-          {' '}
-          {navItems.map(({ to, label }) => (
-            <NavLink
-              key={to}
-              to={to}
-              onClick={onNavClose}
-              className={navItemClass}
-            >
-              {label}
-            </NavLink>
-          ))}
-        </nav>
+        <div className="flex flex-1 flex-col justify-between overflow-y-auto px-6">
+          <nav className="flex flex-col items-center gap-6 py-6 text-lg text-white">
+            {navItems.map(({ to, label }) => (
+              <MenuNavLink key={to} to={to} onClick={onNavClose}>
+                {label}
+              </MenuNavLink>
+            ))}
+          </nav>
+
+          <footer className="text-md items-middle flex justify-between p-6 font-(--font-bold)">
+            <span>
+              Designed & Developed by{` `}
+              <a
+                href="https://edithsdev.com"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="hover:text-link-hover text-link duration-fast ease-standard transition-colors"
+              >
+                edithsdev
+              </a>{' '}
+            </span>
+            <span> © {new Date().getFullYear()} Sesh</span>
+          </footer>
+        </div>
       </aside>
     </div>
   );

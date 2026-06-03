@@ -62,8 +62,8 @@
   --color-interactive-muted-hover: var(--rose-300);
 
   /* Links */
-  --color-link: var(--color-primary);
-  --color-link-hover: var(--color-primary-hover);
+  --color-link: var(--rose-100);
+  --color-link-hover: var(--rose-300);
 
   /* Menu Navigation */
   --color-nav-link: var(--black-900);
