@@ -10,6 +10,7 @@ const NavBar = () => {
   const isHome = location.pathname === '/';
 
   return (
+    // todo: look if I can optimise and breakdown into components
     <nav className="flex w-full items-center justify-between px-4 py-4 md:px-6 md:py-6">
       {isHome ? (
         <NavLink

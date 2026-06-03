@@ -71,6 +71,8 @@
 
   /* Font weights */
   --font-regular: var(--font-weight-regular);
+  --font-medium: var(--font-weight-medium);
+  --font-semibold: var(--font-weight-semibold);
   --font-bold: var(--font-weight-bold);
 }
 

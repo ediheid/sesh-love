@@ -109,7 +109,7 @@
     ========================= */
 
   --font-sans:
-    'Atkinson Hyperlegible', system-ui, -apple-system, Segoe UI, Roboto,
+    'Atkinson Hyperlegible Next', system-ui, -apple-system, Segoe UI, Roboto,
     sans-serif;
 
   /* =========================
@@ -128,5 +128,7 @@
 
   /* Font weights */
   --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
   --font-weight-bold: 700;
 }
