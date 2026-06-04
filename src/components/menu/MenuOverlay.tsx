@@ -10,11 +10,6 @@ const MenuOverlay = ({ navOpen, onNavClose, children }: Props) => {
   useEscapeKey(onNavClose, navOpen);
 
   return (
-    // <div
-    //   className={`duration-slow ease-standard fixed inset-0 z-50 transition-transform ${
-    //     navOpen ? 'pointer-events-auto' : 'pointer-events-none'
-    //   }`}
-    // >
     <div
       className={`duration-slow ease-standard fixed inset-0 z-50 transition-transform ${
         navOpen ? 'pointer-events-auto' : 'pointer-events-none'
