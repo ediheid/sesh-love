@@ -6,7 +6,7 @@ import Panel from '../menu/Panel';
 import MenuHeader from '../menu/MenuHeader';
 import MenuNav from '../menu/MenuNav';
 import MenuFooter from '../menu/MenuFooter';
-import Svg from '../../components/ui/svgs/Svgs';
+import Svg from '../../primitives/svgs/Svgs';
 
 const NavBar = () => {
   const [navOpen, setNavOpen] = useState(false);

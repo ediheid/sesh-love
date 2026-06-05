@@ -1,4 +1,4 @@
-import Svg from '../../components/ui/svgs/Svgs';
+import Svg from '../../primitives/svgs/Svgs';
 
 type Props = {
   onNavClose: () => void;

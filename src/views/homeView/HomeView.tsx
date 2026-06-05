@@ -1,6 +1,6 @@
 import balloon from '../../assets/images/balloon.webp';
-import Image from '../../components/ui/image/Image';
-import Svg from '../../components/ui/svgs/Svgs';
+import Image from '../../primitives/image/Image';
+import Svg from '../../primitives/svgs/Svgs';
 import styles from './HomeView.module.css';
 
 const HomeView = () => {
