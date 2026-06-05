@@ -13,16 +13,16 @@ type Props = {
 const MenuNav = ({ onNavClose }: Props) => {
   const location = useLocation();
 
-  // todo: fix z-indexes or placement as they hide behind the other links when they should be on top
-  // todo: update sizes responsively, too small on large screens
-  // todo: update placement responsively, too close to the link on small screens, and too far on large screens
+  // todo: update alt texts and bring in 'upcoming'
+  // todo: Cleaneup file - exctract the nav items to a separate file
+
   const navItems = [
     {
       to: '/workshops',
       label: 'workshops',
       imageSrc: workshops,
       imageClassName:
-        'left-[-40px] -top-28 rotate-[-2deg] pointer-events-none transition-transform duration-fast ease-standard',
+        '-left-10 md:-left-8 lg:-left-6 2xl:-left-2 -top-27 2xl:-top-25 md:scale-120 lg:scale-125 rotate-[-2deg] xl:scale-130 2xl:scale-150',
       altText:
         '4 brown, white and grey, fluffy ferrets sitting, huddled together, looking at the camera.',
     },
@@ -31,7 +31,7 @@ const MenuNav = ({ onNavClose }: Props) => {
       label: 'training',
       imageSrc: trainings,
       imageClassName:
-        'right-[-90px] top-1 pointer-events-none transition-transform duration-fast ease-standard',
+        '-right-22 scale-80 md:-right-8 lg:-right-24 xl:-right-16 2xl:-right-15 -top-7 lg:-top-0 2xl:-top-4 md:scale-100 lg:scale-110  xl:scale-110 xl:-top-1 2xl:scale-130',
       altText:
         'Jane Fonda wearing a canary yellow swimsuit cut leotard with capped sleeves and frills, yellow legwarmers with purple cuffs, sitting with one leg up in an aerobics pose.',
     },
@@ -47,7 +47,7 @@ const MenuNav = ({ onNavClose }: Props) => {
       label: 'contact',
       imageSrc: contact,
       imageClassName:
-        'left-[-40px] top-9 pointer-events-none transition-transform duration-fast ease-standard',
+        '-left-22 md:left-3 lg:-left-24 xl:-left-10 -top-11 md:-top-8 lg:-top-4 xl:top-2 2xl:top-3 rotate-[-4deg] md:rotate-[-2deg] md:rotate-[-2deg] scale-60 md:scale-75 lg:scale-85 xl:scale-87 2xl:scale-90',
       altText:
         'A multi coloured, marbled crystal ball in pastel shades on a gold star shaped base.',
     },
@@ -58,7 +58,7 @@ const MenuNav = ({ onNavClose }: Props) => {
             label: 'home',
             imageSrc: home,
             imageClassName:
-              'right-[-10px] top-1 pointer-events-none transition-transform duration-fast ease-standard rotate-[2deg]',
+              '-right-15 md:-right-0 lg:-right-16 xl:-right-7 2xl:-right-0 -top-8 lg:-top-2 scale-42 md:scale-60 lg:scale-50 xl:scale-60 2xl:scale-70',
             altText:
               'Pale pink Lego style cottage two story cotrtage house with white picket like railaings.',
           },
@@ -67,7 +67,7 @@ const MenuNav = ({ onNavClose }: Props) => {
   ];
 
   return (
-    <nav className="flex flex-col items-center gap-6 py-6 text-lg text-white">
+    <nav className="flex flex-col items-center gap-6 py-9 text-lg text-white">
       {navItems.map(({ to, label, imageSrc, altText, imageClassName }) => (
         <MenuNavLink
           key={to}

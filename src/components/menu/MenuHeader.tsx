@@ -7,7 +7,7 @@ type Props = {
 const MenuHeader = ({ onNavClose }: Props) => {
   return (
     <div className="shrink-0">
-      <div className="flex justify-end p-6">
+      <div className="flex justify-end px-6 pt-6">
         <button
           onClick={onNavClose}
           aria-label="Close menu"

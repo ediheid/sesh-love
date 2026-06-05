@@ -18,7 +18,7 @@ const MenuNavLink = ({
   onClick,
   imageClassName,
 }: MenuNavLinkProps) => (
-  <div className="relative isolate flex w-[80%] max-w-sm items-center justify-center">
+  <div className="relative flex w-[80%] max-w-sm items-center">
     <NavLink
       to={to}
       onClick={onClick}
@@ -34,7 +34,7 @@ const MenuNavLink = ({
         height={200}
         alt={altText}
         variant="default"
-        className={`pointer-events-none absolute object-contain ${imageClassName ?? ''}`}
+        className={`duration-fast ease-standard pointer-events-none absolute z-20 object-contain transition-transform ${imageClassName ?? ''}`}
       />
     )}
   </div>
