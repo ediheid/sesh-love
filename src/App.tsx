@@ -3,6 +3,7 @@ import NavBar from './components/navigation/NavBar';
 import HomeView from './views/homeView/HomeView';
 import WorkshopsView from './views/WorkshopsView';
 import TrainingsView from './views/TrainingsView';
+import Upcoming from './views/Upcoming';
 import ContactView from './views/ContactView';
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
           <Route path="/workshops" element={<WorkshopsView />} />
           <Route path="/training" element={<TrainingsView />} />
           <Route path="/contact" element={<ContactView />} />
-
+          <Route path="/upcoming" element={<Upcoming />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

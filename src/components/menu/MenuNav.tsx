@@ -11,6 +11,7 @@ const MenuNav = ({ onNavClose }: Props) => {
   const navItems = [
     { to: '/workshops', label: 'workshops' },
     { to: '/training', label: 'training' },
+    { to: '/upcoming', label: 'next dates' },
     { to: '/contact', label: 'contact' },
     ...(location.pathname !== '/' ? [{ to: '/', label: 'home' }] : []),
   ];
