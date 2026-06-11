@@ -11,7 +11,6 @@ const MenuNav = ({ onNavClose }: Props) => {
   const navItems = getNavItems(pathname);
 
   // todo: update alt texts
-  // todo: debug scroll left and right on mobile
   // todo: debug scoll position not always being on top when navigating to a new page from the menu in the actyual menu
 
   return (

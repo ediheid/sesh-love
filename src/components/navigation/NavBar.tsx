@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { useScrollLock } from '../../hooks/useScrollLock';
 import MenuOverlay from '../menu/MenuOverlay';
@@ -10,6 +10,8 @@ import Svg from '../../primitives/svgs/Svgs';
 
 const NavBar = () => {
   const [navOpen, setNavOpen] = useState(false);
+
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   // Prevent focus outline on element behind overlay during close animation
   const onNavClose = () => {
@@ -26,6 +28,12 @@ const NavBar = () => {
   const location = useLocation();
   const isHome = location.pathname === '/';
   const showContactShortcut = isHome;
+
+  useEffect(() => {
+    if (navOpen) {
+      scrollRef.current?.scrollTo({ top: 0, behavior: 'auto' });
+    }
+  }, [navOpen]);
 
   return (
     <nav className="flex w-full items-center justify-between px-4 py-4 md:px-6 md:py-6">
@@ -44,7 +52,10 @@ const NavBar = () => {
       <MenuOverlay navOpen={navOpen} onNavClose={onNavClose}>
         <Panel navOpen={navOpen}>
           <MenuHeader onNavClose={onNavClose} />
-          <div className="flex flex-1 flex-col justify-between overflow-x-hidden overflow-y-auto px-6">
+          <div
+            ref={scrollRef}
+            className="flex flex-1 flex-col justify-between overflow-x-hidden overflow-y-auto px-6"
+          >
             <MenuNav onNavClose={onNavClose} />
             <MenuFooter />
           </div>
