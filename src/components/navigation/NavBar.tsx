@@ -44,7 +44,7 @@ const NavBar = () => {
       <MenuOverlay navOpen={navOpen} onNavClose={onNavClose}>
         <Panel navOpen={navOpen}>
           <MenuHeader onNavClose={onNavClose} />
-          <div className="flex flex-1 flex-col justify-between overflow-y-auto px-6">
+          <div className="flex flex-1 flex-col justify-between overflow-x-hidden overflow-y-auto px-6">
             <MenuNav onNavClose={onNavClose} />
             <MenuFooter />
           </div>
