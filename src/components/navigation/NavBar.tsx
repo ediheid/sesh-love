@@ -10,6 +10,7 @@ import Svg from '../../primitives/svgs/Svgs';
 
 const NavBar = () => {
   const [navOpen, setNavOpen] = useState(false);
+  const [menuCycle, setMenuCycle] = useState(0);
 
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -21,7 +22,10 @@ const NavBar = () => {
     }
   };
 
-  const onNavOpen = () => setNavOpen(true);
+  const onNavOpen = () => {
+    setNavOpen(true);
+    setMenuCycle((prev) => prev + 1);
+  };
 
   useScrollLock(navOpen);
 
@@ -33,7 +37,7 @@ const NavBar = () => {
     if (navOpen) {
       scrollRef.current?.scrollTo({ top: 0, behavior: 'auto' });
     }
-  }, [navOpen]);
+  }, [navOpen, menuCycle]);
 
   return (
     <nav className="flex w-full items-center justify-between px-4 py-4 md:px-6 md:py-6">
@@ -56,7 +60,7 @@ const NavBar = () => {
             ref={scrollRef}
             className="flex flex-1 flex-col justify-between overflow-x-hidden overflow-y-auto px-6"
           >
-            <MenuNav onNavClose={onNavClose} />
+            <MenuNav key={menuCycle} onNavClose={onNavClose} />
             <MenuFooter />
           </div>
         </Panel>

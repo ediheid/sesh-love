@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import MenuNavLink from './MenuNavLink';
-import { getNavItems } from './menuiNavItems';
+import { getNavItems, type NavItem } from './menuNavItems';
 
 type Props = {
   onNavClose: () => void;
@@ -8,14 +8,12 @@ type Props = {
 
 const MenuNav = ({ onNavClose }: Props) => {
   const { pathname } = useLocation();
-  const navItems = getNavItems(pathname);
+  const navItems: NavItem[] = getNavItems(pathname);
 
   // todo: update alt texts
-  // todo: debug scoll position not always being on top when navigating to a new page from the menu in the actyual menu
-
   return (
     <nav className="flex flex-col items-center gap-6 py-9 text-lg text-white">
-      {navItems.map(({ to, label, imageSrc, altText, imageClassName }) => (
+      {navItems.map(({ to, label, imageSrc, altText, imageClassName }, i) => (
         <MenuNavLink
           key={to}
           to={to}
@@ -23,6 +21,7 @@ const MenuNav = ({ onNavClose }: Props) => {
           imageClassName={imageClassName}
           altText={altText}
           onClick={onNavClose}
+          index={i}
         >
           {label}
         </MenuNavLink>

@@ -8,6 +8,7 @@ type MenuNavLinkProps = {
   imageClassName: string;
   altText: string;
   onClick: () => void;
+  index: number;
 };
 
 const MenuNavLink = ({
@@ -17,8 +18,12 @@ const MenuNavLink = ({
   altText,
   onClick,
   imageClassName,
+  index,
 }: MenuNavLinkProps) => (
-  <div className="relative flex w-[80%] max-w-sm items-center">
+  <div
+    className="relative flex w-[80%] max-w-sm items-center"
+    style={{ '--i': index } as React.CSSProperties}
+  >
     <NavLink
       to={to}
       onClick={onClick}
@@ -33,7 +38,7 @@ const MenuNavLink = ({
       height={200}
       alt={altText}
       variant="default"
-      className={`duration-fast ease-standard pointer-events-none absolute z-20 object-contain transition-transform ${imageClassName ?? ''}`}
+      className={`load-in duration-fast ease-standard pointer-events-none absolute z-20 object-contain transition-transform ${imageClassName ?? ''}`}
     />
   </div>
 );
