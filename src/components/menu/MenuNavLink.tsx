@@ -4,9 +4,9 @@ import Image from '../../primitives/image/Image';
 type MenuNavLinkProps = {
   to: string;
   children: React.ReactNode;
-  imageSrc?: string;
-  imageClassName?: string;
-  altText?: string;
+  imageSrc: string;
+  imageClassName: string;
+  altText: string;
   onClick: () => void;
 };
 
@@ -26,17 +26,15 @@ const MenuNavLink = ({
     >
       {children}
     </NavLink>
-    {/* // todo: remove the conditional once I have all images, and remoive the coniditonal in props as well */}
-    {imageSrc && altText && (
-      <Image
-        src={imageSrc}
-        width={200}
-        height={200}
-        alt={altText}
-        variant="default"
-        className={`duration-fast ease-standard pointer-events-none absolute z-20 object-contain transition-transform ${imageClassName ?? ''}`}
-      />
-    )}
+
+    <Image
+      src={imageSrc}
+      width={200}
+      height={200}
+      alt={altText}
+      variant="default"
+      className={`duration-fast ease-standard pointer-events-none absolute z-20 object-contain transition-transform ${imageClassName ?? ''}`}
+    />
   </div>
 );
 
