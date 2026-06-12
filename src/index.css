@@ -38,6 +38,15 @@
   --color-nav-link-text: var(--color-nav-link-text);
   --color-nav-link-text-hover: var(--color-nav-link-text-hover);
 
+  /* Cards */
+  --color-card-background: var(--color-surface);
+  --color-card-border: var(--color-primary);
+  --color-card-headings: var(--color-primary);
+  --color-card-button-text: var(--color-primary);
+  --color-card-button-text-hover: var(--color-surface);
+  --color-card-button-background: var(--color-surface);
+  --color-card-button-hover-background: var(--color-primary);
+
   /* motion */
   --duration-fast: var(--duration-fast);
   --duration-slow: var(--duration-slow);

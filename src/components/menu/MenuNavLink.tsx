@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import Image from '../../primitives/image/Image';
 
-type MenuNavLinkProps = {
+interface MenuNavLinkProps {
   to: string;
   children: React.ReactNode;
   imageSrc: string;
@@ -9,7 +9,7 @@ type MenuNavLinkProps = {
   altText: string;
   onClick: () => void;
   index: number;
-};
+}
 
 const MenuNavLink = ({
   to,
