@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import NavBar from './components/navigation/NavBar';
 import HomeView from './views/homeView/HomeView';
 import WorkshopsView from './views/WorkshopsView';
@@ -7,9 +7,16 @@ import Upcoming from './views/Upcoming';
 import ContactView from './views/ContactView';
 
 function App() {
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
   return (
     <>
-      <header className="fixed top-0 left-0 z-50 w-full">
+      <header
+        className={
+          isHome ? 'fixed top-0 left-0 z-50 w-full' : 'relative w-full'
+        }
+      >
         <NavBar />
       </header>
 

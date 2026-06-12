@@ -6,6 +6,7 @@ import Panel from '../menu/Panel';
 import MenuHeader from '../menu/MenuHeader';
 import MenuNav from '../menu/MenuNav';
 import MenuFooter from '../menu/MenuFooter';
+import ViewTitle from '../typography/ViewTitle';
 import Svg from '../../primitives/svgs/Svgs';
 
 const NavBar = () => {
@@ -31,6 +32,8 @@ const NavBar = () => {
 
   const location = useLocation();
   const isHome = location.pathname === '/';
+  const isContact = location.pathname === '/contact';
+  const pageTitle = location.pathname.split('/')[1];
 
   useEffect(() => {
     if (navOpen) {
@@ -46,14 +49,22 @@ const NavBar = () => {
           contact
         </NavLink>
       ) : (
-        <NavLink to="/" aria-label="Sesh home" className="nav-link">
-          <Svg name="seshHero" decorative className="block h-full w-auto" />
-        </NavLink>
+        <div className="relative inline-flex flex-col items-start">
+          <NavLink to="/" aria-label="Sesh home" className="nav-link">
+            <Svg name="seshHero" decorative className="block h-full w-auto" />
+          </NavLink>
+
+          {pageTitle && (
+            <div className="absolute top-full left-0 whitespace-nowrap">
+              <ViewTitle title={pageTitle} />
+            </div>
+          )}
+        </div>
       )}
 
       {/* RIGHT */}
       <div className="flex items-center gap-6">
-        {!isHome && (
+        {!isHome && !isContact && (
           <NavLink to="/contact" className="nav-link">
             contact
           </NavLink>

@@ -6,6 +6,11 @@
     transition-timing-function: var(--ease-standard);
   }
 
+  /* same as nav-link but without hover state - not clickable */
+  .view-title {
+    @apply text-primary md:text-header-nav-lg text-header-nav-sm italic;
+  }
+
   /*  todo: look where else I am repeating myself and create more components */
 
   /* .button {
