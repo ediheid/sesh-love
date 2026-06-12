@@ -1,7 +1,11 @@
+import Card from '../components/ui/card/Card';
+
 const WorkshopsView = () => {
   return (
     <section className="view-section-margins">
-      <div>This will be the workshops view</div>
+      <div>
+        <Card />
+      </div>
     </section>
   );
 };
