@@ -11,17 +11,9 @@
     @apply text-primary md:text-header-nav-lg text-header-nav-sm italic;
   }
 
-  /*  todo: look where else I am repeating myself and create more components */
-
-  /* .button {
-    @apply rounded-md px-4 py-2 transition-colors;
+  .view-section-margins {
+    @apply mx-4 my-8 md:mx-6 lg:mx-8 lg:my-10;
   }
-
-  .menu-link {
-    @apply flex items-center justify-center;
-
-    
-  } */
 
   @keyframes load-in {
     0% {
