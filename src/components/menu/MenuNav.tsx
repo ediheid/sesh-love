@@ -10,7 +10,6 @@ const MenuNav = ({ onNavClose }: Props) => {
   const { pathname } = useLocation();
   const navItems: NavItem[] = getNavItems(pathname);
 
-  // todo: update alt texts
   return (
     <nav className="flex flex-col items-center gap-6 py-9 text-lg text-white">
       {navItems.map(({ to, label, imageSrc, altText, imageClassName }, i) => (
