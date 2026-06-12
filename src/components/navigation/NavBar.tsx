@@ -31,7 +31,6 @@ const NavBar = () => {
 
   const location = useLocation();
   const isHome = location.pathname === '/';
-  const showContactShortcut = isHome;
 
   useEffect(() => {
     if (navOpen) {
@@ -40,8 +39,9 @@ const NavBar = () => {
   }, [navOpen, menuCycle]);
 
   return (
-    <nav className="flex w-full items-center justify-between px-4 py-4 md:px-6 md:py-6">
-      {showContactShortcut ? (
+    <nav className="flex w-full items-center justify-between px-4 py-4 md:px-6 md:py-6 lg:px-8">
+      {/* LEFT */}
+      {isHome ? (
         <NavLink to="/contact" className="nav-link">
           contact
         </NavLink>
@@ -50,9 +50,20 @@ const NavBar = () => {
           <Svg name="seshHero" decorative className="block h-full w-auto" />
         </NavLink>
       )}
-      <button className="nav-link" onClick={onNavOpen}>
-        menu
-      </button>
+
+      {/* RIGHT */}
+      <div className="flex items-center gap-6">
+        {!isHome && (
+          <NavLink to="/contact" className="nav-link">
+            contact
+          </NavLink>
+        )}
+
+        <button className="nav-link" onClick={onNavOpen}>
+          menu
+        </button>
+      </div>
+
       <MenuOverlay navOpen={navOpen} onNavClose={onNavClose}>
         <Panel navOpen={navOpen}>
           <MenuHeader onNavClose={onNavClose} />
@@ -64,7 +75,7 @@ const NavBar = () => {
             <MenuFooter />
           </div>
         </Panel>
-      </MenuOverlay>{' '}
+      </MenuOverlay>
     </nav>
   );
 };
