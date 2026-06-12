@@ -22,6 +22,7 @@ const Card = ({
   return (
     // todo: Add alt text for images in datya files (workshops and trainings) and pass it to Card component
     // todo: tidy up anmd break this down into multiple compoinents if needed
+    // todo: do I want gaps between cards? or stick to design?
 
     <div className="border-card-border bg-card-background flex h-full flex-col border-2 px-18 pt-4">
       {/* CONTENT */}
@@ -62,10 +63,10 @@ const Card = ({
 
       {/* FOOTER */}
       <div className="-mx-18 mt-auto flex justify-end">
-        <div className="border-card-border border-t-2  border-l-2">
+        <div className="border-card-border border-t-2 border-l-2">
           {/* // todo: add styling and hover to buttons */}
           {/* // todo: add modal */}
-          <button className="text-card-button-text hover:text-card-button-text-hover bg-card-button-background hover:bg-card-button-hover-background px-4 py-2 font-(--font-bold) tracking-wide cursor-pointer transition-colors duration-fast ease-standard">
+          <button className="text-card-button-text hover:text-card-button-text-hover bg-card-button-background hover:bg-card-button-hover-background duration-fast ease-standard cursor-pointer px-4 py-2 font-(--font-bold) tracking-wide transition-colors">
             find out more
           </button>
         </div>
