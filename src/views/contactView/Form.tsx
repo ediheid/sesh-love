@@ -61,7 +61,7 @@ const Form = () => {
             placeholder="I have a team that wants to do some training.."
             id="message"
             name="message"
-            rows="5"
+            rows={5}
             required
             className="resize-none border"
           />
