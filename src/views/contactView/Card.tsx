@@ -1,3 +1,4 @@
+import Form from './Form';
 import Image from '../../primitives/image/Image';
 import stamp from '../../assets/images/stamp.webp';
 
@@ -10,12 +11,14 @@ const Card = () => {
         height={100}
         alt="decorative stamp drawing with three red roses"
         variant="default"
-        className="absolute top-4 right-4 h-auto w-[clamp(50px,10vw,100px)]"
+        className="load-in absolute top-4 right-4 h-auto w-[clamp(50px,10vw,100px)]"
       />
 
       <h1 className="text-card-headings text-header-nav-sm md:text-header-nav-lg mb-3 font-(--font-bold)">
         get in touch
       </h1>
+
+      <Form />
     </div>
   );
 };
