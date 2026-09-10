@@ -4,7 +4,7 @@ import HomeView from './views/homeView/HomeView';
 import WorkshopsView from './views/WorkshopsView';
 import TrainingsView from './views/TrainingsView';
 import Upcoming from './views/Upcoming';
-import ContactView from './views/ContactView';
+import ContactView from './views/contactView/ContactView';
 
 function App() {
   const location = useLocation();
