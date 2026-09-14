@@ -20,7 +20,7 @@ const Card = ({
   imageClassName,
 }: CardProps) => {
   return (
-    // todo: Add alt text for images in datya files (workshops and trainings) and pass it to Card component
+    // todo: Add alt text for images in data files (workshops and trainings) and pass it to Card component
     // todo: tidy up anmd break this down into multiple compoinents if needed
     // todo: do I want gaps between cards? or stick to design?
 

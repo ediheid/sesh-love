@@ -2,7 +2,7 @@ import Card from './Card';
 
 const ContactView = () => {
   return (
-    <section className="flex min-h-screen items-center justify-center">
+    <section className="view-section-margins">
       <Card />
     </section>
   );
