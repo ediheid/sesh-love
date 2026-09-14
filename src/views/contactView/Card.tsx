@@ -1,28 +1,17 @@
-import Form from './Form';
-import Image from '../../primitives/image/Image';
-import stamp from '../../assets/images/stamp.webp';
+import { useState } from 'react';
+import FormContent from './FormContent';
+import SuccessMessage from './SuccessMessage';
 
 const Card = () => {
+  const [isSent, setIsSent] = useState(false);
+
   return (
     <div className="border-card-border bg-card-background relative mx-auto flex h-full w-full max-w-350 flex-col border-2 p-18">
-      <Image
-        src={stamp}
-        width={100}
-        height={100}
-        alt="decorative stamp drawing with three red roses"
-        variant="default"
-        className="load-in absolute top-6 right-5 h-auto w-[clamp(50px,10vw,100px)]"
-      />
-
-      <h1 className="text-card-headings text-header-nav-sm md:text-header-nav-lg mb-3 font-(--font-bold)">
-        get in touch
-      </h1>
-
-      <p className="text-card-headings pb-2 text-sm">
-        * all fields are required
-      </p>
-
-      <Form />
+      {isSent ? (
+        <SuccessMessage />
+      ) : (
+        <FormContent onSuccess={() => setIsSent(true)} />
+      )}
     </div>
   );
 };
