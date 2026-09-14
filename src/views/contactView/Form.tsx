@@ -129,7 +129,6 @@ const Form = ({ onSuccess }: FormProps) => {
         </div>
 
         {errorMessage && (
-          // todo: font weight bold!?
           <p
             className="text-danger text-sm font-(--font-bold) tracking-wide"
             role="alert"

@@ -6,7 +6,7 @@ const Card = () => {
   const [isSent, setIsSent] = useState(false);
 
   return (
-    <div className="border-card-border bg-card-background relative mx-auto flex h-full w-full max-w-350 flex-col border-2 p-18">
+    <div className="border-card-border bg-card-background relative mx-auto flex h-full w-full max-w-250 flex-col border-2 px-18 pt-18">
       {isSent ? (
         <SuccessMessage />
       ) : (
