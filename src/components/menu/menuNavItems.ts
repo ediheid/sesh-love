@@ -40,15 +40,6 @@ const baseNavItems: NavItem[] = [
     altText:
       'A Chihuahua wearing pink glitter curlers, a rhinestone necklace, and long eyelashes.',
   },
-  {
-    to: '/contact',
-    label: 'contact',
-    imageSrc: contact,
-    imageClassName:
-      '-left-22 md:left-3 lg:-left-24 xl:-left-10 -top-11 md:-top-8 lg:-top-4 xl:top-2 2xl:top-3 rotate-[-4deg] md:rotate-[0deg] scale-60 md:scale-75 lg:scale-85 xl:scale-87 2xl:scale-90',
-    altText:
-      'A marbled crystal ball in pastel colours sitting on a gold, star-shaped base.',
-  },
 ];
 
 const homeItem: NavItem = {
@@ -60,8 +51,21 @@ const homeItem: NavItem = {
   altText: 'A pale pink two-story cottage with white picket railings.',
 };
 
+const contactItem: NavItem = {
+  to: '/contact',
+  label: 'contact',
+  imageSrc: contact,
+  imageClassName:
+    '-left-22 md:left-3 lg:-left-24 xl:-left-10 -top-11 md:-top-8 lg:-top-4 xl:top-2 2xl:top-3 rotate-[-4deg] md:rotate-[0deg] scale-60 md:scale-75 lg:scale-85 xl:scale-87 2xl:scale-90',
+  altText:
+    'A marbled crystal ball in pastel colours sitting on a gold, star-shaped base.',
+};
 export const getNavItems = (pathname: string): NavItem[] => {
   const items = [...baseNavItems];
+
+  if (pathname !== '/contact') {
+    items.push(contactItem);
+  }
 
   if (pathname !== '/') {
     items.push(homeItem);
