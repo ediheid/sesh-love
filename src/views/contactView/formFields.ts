@@ -20,7 +20,7 @@ export const contactFormFields: FormField[] = [
     id: 'location',
     label: 'where are you?',
     type: 'text',
-    placeholder: 'helps me to schedule around time zones',
+    placeholder: 'country / time zone',
     autoComplete: 'country-name',
   },
 ];
