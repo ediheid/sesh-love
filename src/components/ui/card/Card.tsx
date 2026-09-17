@@ -62,15 +62,13 @@ const Card = ({
       </div>
 
       {/* FOOTER */}
-      <div className="-mx-18 mt-auto flex justify-end">
+      <footer className="-mx-18 mt-auto flex justify-end">
         <div className="border-card-border border-t-2 border-l-2">
-          {/* // todo: add styling and hover to buttons */}
-          {/* // todo: add modal */}
-          <button className="text-card-button-text hover:text-card-button-text-hover bg-card-button-background hover:bg-card-button-hover-background duration-fast ease-standard cursor-pointer px-4 py-2 font-(--font-bold) tracking-wide transition-colors">
+          <button className="text-card-button-text hover:text-card-button-text-hover focus:text-card-button-text-hover bg-card-button-background hover:bg-card-button-hover-background focus:bg-card-button-hover-background duration-fast ease-standard cursor-pointer px-4 py-2 font-(--font-bold) tracking-wide transition-colors">
             find out more
           </button>
         </div>
-      </div>
+      </footer>
     </div>
   );
 };

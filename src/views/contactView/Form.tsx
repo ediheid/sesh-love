@@ -142,7 +142,7 @@ const Form = ({ onSuccess }: FormProps) => {
         <button
           type="submit"
           disabled={!isValid || isSending}
-          className="bg-submit-button-background text-submit-button-text disabled:bg-submit-button-disabled-background disabled:text-submit-button-disabled-text duration-fast ease-standard hover:bg-submit-button-hover-background hover:text-submit-button-hover-text cursor-pointer self-start px-6 py-2 font-(--font-bold) tracking-wide transition-colors disabled:cursor-not-allowed"
+          className="bg-submit-button-background text-submit-button-text disabled:bg-submit-button-disabled-background disabled:text-submit-button-disabled-text duration-fast ease-standard hover:bg-submit-button-hover-background focus:bg-submit-button-hover-background hover:text-submit-button-hover-text focus:text-submit-button-hover-text cursor-pointer self-start px-6 py-2 font-(--font-bold) tracking-wide transition-colors disabled:cursor-not-allowed"
         >
           {isSending ? 'sending...' : 'send message'}{' '}
         </button>

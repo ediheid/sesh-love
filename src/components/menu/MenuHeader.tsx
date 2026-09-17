@@ -15,7 +15,7 @@ const MenuHeader = ({ onNavClose }: Props) => {
         >
           <Svg
             name="closeSVG"
-            className="text-icon hover:text-icon-hover transition-colors"
+            className="text-icon hover:text-icon-hover focus:text-icon-hover transition-colors"
           />
         </button>
       </div>

@@ -38,7 +38,7 @@ const SuccessMessage = () => {
         <div className="border-card-border border-t-2 border-l-2">
           <NavLink
             to="/"
-            className="text-surface hover:text-interactive-hover bg-primary hover:bg-surface duration-fast ease-standard block px-12 py-2 font-(--font-bold) tracking-wide transition-colors"
+            className="text-surface hover:text-interactive-hover focus:text-submit-button-hover-text bg-primary hover:bg-surface focus:bg-surface duration-fast ease-standard block px-12 py-2 font-(--font-bold) tracking-wide transition-colors"
           >
             home
           </NavLink>

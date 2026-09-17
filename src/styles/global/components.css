@@ -1,6 +1,6 @@
 @layer components {
   .nav-link {
-    @apply text-interactive md:text-header-nav-lg hover:text-interactive-hover text-header-nav-sm cursor-pointer transition-colors;
+    @apply text-interactive md:text-header-nav-lg hover:text-interactive-hover focus:text-interactive-hover text-header-nav-sm cursor-pointer transition-colors;
 
     transition-duration: var(--duration-fast);
     transition-timing-function: var(--ease-standard);
