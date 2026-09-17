@@ -6,11 +6,13 @@ const Card = () => {
   const [isSent, setIsSent] = useState(false);
 
   return (
-    <div className="border-card-border bg-card-background relative mx-auto flex h-full w-full max-w-250 flex-col border-2 px-18 pt-18">
+    <div className="border-card-border relative mx-auto flex h-full w-full max-w-250 flex-col border-2">
       {isSent ? (
         <SuccessMessage />
       ) : (
-        <FormContent onSuccess={() => setIsSent(true)} />
+        <div className="px-18 pt-18">
+          <FormContent onSuccess={() => setIsSent(true)} />
+        </div>
       )}
     </div>
   );
