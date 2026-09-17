@@ -8,11 +8,6 @@
   --red-400: #f22e52;
   --red-700: #d90707;
 
-  /* Original pink */
-  /* todo: do I want this?! */
-  --pink-original: #d53769;
-  --pink-original-alpha: #d5376933;
-
   /* Neutrals */
   --gray-100: #f2f2f2;
   --black-900: #0d0d0d;
@@ -24,6 +19,9 @@
   /* highlights */
   --lilac-100: #acb7f2;
 
+  /* external logos */
+  --eventbrite-orange: #f05537;
+
   /* =========================
        SEMANTIC TOKENS
     ========================= */
@@ -31,9 +29,6 @@
   --color-primary: var(--red-500);
   --color-primary-hover: var(--red-500);
   --color-icon-hover: var(--rose-300);
-
-  /* Optional: use your original pink where needed */
-  --color-brand-original: var(--pink-original);
 
   /* States */
   --color-danger: var(--red-700);
@@ -46,6 +41,9 @@
   /* Text */
   --color-text: var(--black-900);
   --color-heading: var(--black-900);
+
+  /* External */
+  --color-eventbrite: var(--eventbrite-orange);
 
   /* =========================
    INTERACTIONS (HOVER / ACTIVE / FOCUS)

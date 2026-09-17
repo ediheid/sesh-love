@@ -32,6 +32,9 @@
   --color-link: var(--color-link);
   --color-link-hover: var(--color-link-hover);
 
+  /* EXTERNAL */
+  --color-eventbrite: var(--color-eventbrite);
+
   /* Menu Navigation */
   --color-nav-link: var(--color-nav-link);
   --color-nav-link-hover: var(--color-nav-link-hover);
