@@ -12,7 +12,7 @@ const MenuFooter = () => {
         >
           <Svg
             name="eventbriteText"
-            className="text-icon hover:text-eventbrite focus:text-eventbrite transition-colors"
+            className="text-icon hover:text-eventbrite transition-colors"
             decorative
           />
         </a>
@@ -25,7 +25,7 @@ const MenuFooter = () => {
             href="https://edithsdev.com"
             target="_blank"
             rel="noreferrer noopener"
-            className="text-link hover:text-link-hover focus:text-link-hover transition-colors"
+            className="text-link hover:text-link-hover transition-colors"
           >
             edithsdev
           </a>

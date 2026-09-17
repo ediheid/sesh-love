@@ -20,12 +20,7 @@ const Card = ({
   imageClassName,
 }: CardProps) => {
   return (
-    // todo: Add alt text for images in data files (workshops and trainings) and pass it to Card component
-    // todo: tidy up anmd break this down into multiple compoinents if needed
-    // todo: do I want gaps between cards? or stick to design?
-
     <div className="border-card-border bg-card-background flex h-full flex-col border-2 px-18 pt-4">
-      {/* CONTENT */}
       <div className="flex flex-col items-center justify-center">
         <div className="overflow-hidden">
           <Image
@@ -61,7 +56,6 @@ const Card = ({
         </p>
       </div>
 
-      {/* FOOTER */}
       <footer className="-mx-18 mt-auto flex justify-end">
         <div className="border-card-border border-t-2 border-l-2">
           <button className="text-card-button-text hover:text-card-button-text-hover focus:text-card-button-text-hover bg-card-button-background hover:bg-card-button-hover-background focus:bg-card-button-hover-background duration-fast ease-standard cursor-pointer px-4 py-2 font-(--font-bold) tracking-wide transition-colors">
