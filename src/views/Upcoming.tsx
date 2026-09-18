@@ -4,8 +4,8 @@ import upcoming from '../assets/images/upcoming.webp';
 
 const Upcoming = () => {
   return (
-    <section className="flex min-h-screen justify-center">
-      <div className="border-card-border bg-card-background m-4 flex h-full flex-col border-2 px-4 pt-8 pb-10 sm:m-8 sm:px-8 md:m-12 md:px-12 lg:m-16 lg:px-18 xl:min-w-300">
+    <section className="view-section-margins flex justify-center">
+      <div className="border-card-border bg-card-background flex h-full max-w-360 flex-col border-2 p-6 sm:p-8 md:px-15 xl:min-w-260">
         <div className="flex flex-col items-center justify-center">
           <div className="overflow-hidden">
             <Image
