@@ -25,7 +25,7 @@ const Upcoming = () => {
 
         <div className="mx-auto w-full max-w-180">
           <p className="mb-2 leading-relaxed">
-            Keep up to date with future workshops and trainings via eventbrite.
+            Keep up to date with future workshops and training via eventbrite.
           </p>
 
           <p>

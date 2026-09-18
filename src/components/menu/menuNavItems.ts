@@ -1,5 +1,5 @@
 import workshops from '../../assets/images/workshops.webp';
-import trainings from '../../assets/images/training.webp';
+import training from '../../assets/images/training.webp';
 import contact from '../../assets/images/contact.webp';
 import home from '../../assets/images/home.webp';
 import upcoming from '../../assets/images/upcoming.webp';
@@ -25,7 +25,7 @@ const baseNavItems: NavItem[] = [
   {
     to: '/training',
     label: 'training',
-    imageSrc: trainings,
+    imageSrc: training,
     imageClassName:
       '-right-22 scale-80 md:-right-8 lg:-right-24 xl:-right-16 2xl:-right-15 -top-7 lg:-top-0 2xl:-top-4 md:scale-100 lg:scale-110 xl:scale-110 xl:-top-1 2xl:scale-130',
     altText:

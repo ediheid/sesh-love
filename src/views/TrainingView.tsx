@@ -1,7 +1,7 @@
 import Card from '../components/ui/card/Card';
 import { trainings } from '../content/tranings';
 
-const TrainingsView = () => {
+const TrainingView = () => {
   return (
     <section className="view-section-margins">
       <div className="grid gap-6 md:grid-cols-2">
@@ -13,4 +13,4 @@ const TrainingsView = () => {
   );
 };
 
-export default TrainingsView;
+export default TrainingView;
