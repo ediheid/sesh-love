@@ -2,6 +2,7 @@ import type { Workshop } from './types';
 import haiku from '../workshops/images/haiku.webp';
 import naming from '../workshops/images/naming.webp';
 import writing from '../workshops/images/writing.webp';
+import astro from '../workshops/images/astro2.webp';
 
 export const workshops: Workshop[] = [
   {
@@ -27,6 +28,16 @@ export const workshops: Workshop[] = [
   {
     title: 'writing challenge',
     imageSrc: writing,
+    altText: '',
+    description:
+      'Lollipop chocolate cake I love. I love cookie liquorice cake. I love macaroon wafer I love marzipan carrot cake I love. Toffee ice cream I love ice cream cake. Candy tart ice cream I love icing brownie soufflé. ',
+    whoFor: 'Everyone',
+    skillLevel: 'All levels',
+    imageClassName: 'scale-80',
+  },
+  {
+    title: 'astro witch',
+    imageSrc: astro,
     altText: '',
     description:
       'Lollipop chocolate cake I love. I love cookie liquorice cake. I love macaroon wafer I love marzipan carrot cake I love. Toffee ice cream I love ice cream cake. Candy tart ice cream I love icing brownie soufflé. ',
