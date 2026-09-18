@@ -2,7 +2,7 @@ import Svg from '../../primitives/svgs/Svgs';
 
 const MenuFooter = () => {
   return (
-    <footer className="pt-10">
+    <footer className="pt-1 md:pt-6 lg:pt-10">
       <div className="flex justify-center">
         <a
           href="https://www.eventbrite.com.au/o/sesh-32151762855"
@@ -18,7 +18,7 @@ const MenuFooter = () => {
         </a>
       </div>
 
-      <div className="text-md flex justify-between px-10 pt-15 pb-5 font-(--font-bold)">
+      <div className="text-md flex justify-between px-10 pt-10 pb-5 font-(--font-bold) md:pt-15">
         <span>
           Website Designed & Developed by{' '}
           <a
