@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import './index.css';
 import App from './App.tsx';
+import ScrollToTop from './components/ui/routing/ScrollToTop.tsx';
 
 import '@fontsource/atkinson-hyperlegible-next/400.css';
 import '@fontsource/atkinson-hyperlegible-next/500.css';
@@ -13,6 +14,7 @@ import '@fontsource/atkinson-hyperlegible-next/700.css';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <App />
     </BrowserRouter>
   </StrictMode>,
