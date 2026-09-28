@@ -120,10 +120,10 @@ const Modal = ({ isOpen, onClose, content }: ModalProps) => {
             <p>
               {content.modal.contact.email}
               <br />
-              or reach out{' '}
+              or reach out via the{' '}
               <NavLink
                 to="/contact"
-                className="text-card-headings hover:text-card-button-text-hover underline"
+                className="text-primary hover:text-highlight underline"
               >
                 {content.modal.contact.formLabel}
               </NavLink>

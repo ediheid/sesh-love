@@ -25,7 +25,7 @@ export const workshops: Workshop[] = [
       teamBuilding: 'Yes',
       contact: {
         email: 'carrie.dennes@gmail.com',
-        formLabel: 'via the contact form',
+        formLabel: 'contact form',
       },
     },
   },
@@ -49,7 +49,7 @@ export const workshops: Workshop[] = [
       teamBuilding: 'Yes',
       contact: {
         email: 'carrie.dennes@gmail.com',
-        formLabel: 'via the contact form',
+        formLabel: 'contact form',
       },
     },
   },
@@ -73,7 +73,7 @@ export const workshops: Workshop[] = [
       teamBuilding: 'Yes',
       contact: {
         email: 'carrie.dennes@gmail.com',
-        formLabel: 'via the contact form',
+        formLabel: 'contact form',
       },
     },
   },
@@ -97,7 +97,7 @@ export const workshops: Workshop[] = [
       teamBuilding: 'Yes',
       contact: {
         email: 'carrie.dennes@gmail.com',
-        formLabel: 'via the contact form',
+        formLabel: 'contact form',
       },
     },
   },
