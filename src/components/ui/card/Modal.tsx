@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import Svg from '../../../primitives/svgs/Svgs';
 import type { CardContent } from '../../../content/shared/types';
 import { useScrollLock } from '../../../hooks/useScrollLock';
@@ -114,9 +115,19 @@ const Modal = ({ isOpen, onClose, content }: ModalProps) => {
 
           <div>
             <h3 className="text-card-headings font-(--font-bold) tracking-wide">
-              Contact
+              Contact to book
             </h3>
-            <p>{content.modal.contact}</p>
+            <p>
+              {content.modal.contact.email}
+              <br />
+              or reach out{' '}
+              <NavLink
+                to="/contact"
+                className="text-card-headings hover:text-card-button-text-hover underline"
+              >
+                {content.modal.contact.formLabel}
+              </NavLink>
+            </p>
           </div>
 
           <button

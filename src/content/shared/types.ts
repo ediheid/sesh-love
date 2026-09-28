@@ -5,7 +5,10 @@ export interface ModalData {
   delivery: string;
   capacity: string;
   teamBuilding: string;
-  contact: string;
+  contact: {
+    email: string;
+    formLabel: string;
+  };
 }
 
 export interface CardContent {

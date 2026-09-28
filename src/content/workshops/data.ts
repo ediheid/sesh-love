@@ -23,7 +23,10 @@ export const workshops: Workshop[] = [
       delivery: 'Online',
       capacity: 'Up to 12 participants',
       teamBuilding: 'Yes',
-      contact: 'hello@example.com',
+      contact: {
+        email: 'carrie.dennes@gmail.com',
+        formLabel: 'via the contact form',
+      },
     },
   },
   {
@@ -44,7 +47,10 @@ export const workshops: Workshop[] = [
       delivery: 'Online',
       capacity: 'Up to 10 participants',
       teamBuilding: 'Yes',
-      contact: 'hello@example.com',
+      contact: {
+        email: 'carrie.dennes@gmail.com',
+        formLabel: 'via the contact form',
+      },
     },
   },
   {
@@ -65,7 +71,10 @@ export const workshops: Workshop[] = [
       delivery: 'In person',
       capacity: 'Up to 10 participants',
       teamBuilding: 'Yes',
-      contact: 'hello@example.com',
+      contact: {
+        email: 'carrie.dennes@gmail.com',
+        formLabel: 'via the contact form',
+      },
     },
   },
   {
@@ -86,7 +95,10 @@ export const workshops: Workshop[] = [
       delivery: 'In person',
       capacity: 'Up to 10 participants',
       teamBuilding: 'Yes',
-      contact: 'hello@example.com',
+      contact: {
+        email: 'carrie.dennes@gmail.com',
+        formLabel: 'via the contact form',
+      },
     },
   },
 ];

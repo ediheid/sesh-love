@@ -16,11 +16,15 @@ const AUTHOR_SPACING = 24;
 const HEADING_SPACING = 18;
 const SECTION_SPACING = 20;
 const LINE_HEIGHT = 16;
+const CONTACT_SPACING = 8;
 
 const MAX_CHARS_PER_LINE = 85;
 
 const RED = '#f20732';
 const BLACK = '#000000';
+
+const CONTACT_URL = 'https://sesh.love/contact';
+const CONTACT_DISPLAY_URL = 'sesh.love/contact';
 
 const encoder = new TextEncoder();
 
@@ -120,6 +124,8 @@ const createPageContent = (content: CardContent) => {
 
   let y = PAGE_HEIGHT - TOP_MARGIN;
 
+  let contactUrlY = 0;
+
   /*
    * Title
    */
@@ -204,13 +210,87 @@ const createPageContent = (content: CardContent) => {
 
   addSection('Team building', content.modal.teamBuilding);
 
-  addSection('Contact', content.modal.contact);
+  /*
+   * Contact to book
+   */
 
-  return commands.join('\n');
+  commands.push(createHeadingCommands('Contact to book', y));
+
+  y -= HEADING_SPACING;
+
+  /*
+   * Email
+   */
+
+  commands.push(
+    createTextCommand(
+      content.modal.contact.email,
+      LEFT_MARGIN,
+      y,
+      FONT_SIZE,
+      BLACK,
+    ),
+  );
+
+  /*
+   * Or
+   */
+
+  y -= LINE_HEIGHT + CONTACT_SPACING;
+
+  commands.push(createTextCommand('or', LEFT_MARGIN, y, FONT_SIZE, BLACK));
+
+  /*
+   * Contact form URL
+   */
+
+  y -= LINE_HEIGHT + CONTACT_SPACING;
+
+  contactUrlY = y;
+
+  commands.push(
+    createTextCommand(
+      CONTACT_DISPLAY_URL,
+      LEFT_MARGIN,
+      contactUrlY,
+      FONT_SIZE,
+      BLACK,
+    ),
+  );
+
+  return {
+    content: commands.join('\n'),
+    contactUrlY,
+  };
 };
 
 const createPdf = (content: CardContent) => {
   const pageContent = createPageContent(content);
+
+  /*
+   * Approximate the width of the displayed URL in Helvetica 11pt.
+   * This is used only for the clickable annotation rectangle.
+   */
+
+  const contactUrlWidth = CONTACT_DISPLAY_URL.length * 5.5;
+  const contactUrlHeight = FONT_SIZE + 4;
+
+  const annotation = `<<
+/Type /Annot
+/Subtype /Link
+/Rect [
+  ${LEFT_MARGIN}
+  ${pageContent.contactUrlY - 3}
+  ${LEFT_MARGIN + contactUrlWidth}
+  ${pageContent.contactUrlY + contactUrlHeight}
+]
+/Border [0 0 0]
+/A <<
+  /Type /Action
+  /S /URI
+  /URI (${CONTACT_URL})
+>>
+>>`;
 
   const objects = [
     `<<
@@ -234,6 +314,7 @@ const createPdf = (content: CardContent) => {
 >>
 >>
 /Contents 5 0 R
+/Annots [6 0 R]
 >>`,
 
     `<<
@@ -243,11 +324,13 @@ const createPdf = (content: CardContent) => {
 >>`,
 
     `<<
-/Length ${encoder.encode(pageContent).length}
+/Length ${encoder.encode(pageContent.content).length}
 >>
 stream
-${pageContent}
+${pageContent.content}
 endstream`,
+
+    annotation,
   ];
 
   let pdf = '%PDF-1.4\n';
