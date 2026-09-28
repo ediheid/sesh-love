@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import LoadIn from '../../components/ui/animation/LoadIn';
 import Image from '../../primitives/image/Image';
 import pigeon from '../../assets/images/pigeon.webp';
 import Svg from '../../primitives/svgs/Svgs';
@@ -49,14 +50,16 @@ const SuccessMessage = () => {
 
           {/* PIGEON */}
           <div className="relative flex justify-center md:justify-end">
-            <Image
-              src={pigeon}
-              width={500}
-              height={500}
-              alt="decorative pigeon illustration"
-              variant="default"
-              className="load-in h-auto w-full max-w-none object-contain md:mr-[-20%] md:w-[140%]"
-            />
+            <LoadIn>
+              <Image
+                src={pigeon}
+                width={500}
+                height={500}
+                alt="decorative pigeon illustration"
+                variant="default"
+                className="h-auto w-full max-w-none object-contain md:mr-[-20%] md:w-[140%]"
+              />
+            </LoadIn>
           </div>
         </div>
 

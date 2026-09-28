@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { CardContent } from '../../../content/shared/types';
+import LoadIn from '../animation/LoadIn';
 import Image from '../../../primitives/image/Image';
 import Modal from './Modal';
 
@@ -13,14 +14,16 @@ const Card = (content: CardProps) => {
       <div className="border-card-border bg-card-background flex h-full flex-col border-2 px-18 pt-4">
         <div className="flex flex-col items-center justify-center">
           <div className="overflow-hidden">
-            <Image
-              src={content.imageSrc}
-              width={200}
-              height={200}
-              alt={content.altText}
-              variant="default"
-              className={`load-in object-cover ${content.imageClassName ?? ''}`}
-            />
+            <LoadIn>
+              <Image
+                src={content.imageSrc}
+                width={200}
+                height={200}
+                alt={content.altText}
+                variant="default"
+                className={`object-cover ${content.imageClassName ?? ''}`}
+              />
+            </LoadIn>
           </div>
 
           <h2 className="text-card-headings text-header-nav-sm md:text-header-nav-lg mb-3 font-(--font-bold)">

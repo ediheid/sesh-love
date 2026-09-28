@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import Image from '../primitives/image/Image';
+import LoadIn from '../components/ui/animation/LoadIn';
 import upcoming from '../assets/images/upcoming.webp';
 
 const Upcoming = () => {
@@ -8,14 +9,16 @@ const Upcoming = () => {
       <div className="border-card-border bg-card-background flex h-full max-w-360 flex-col border-2 p-6 sm:p-8 md:px-15 xl:min-w-260">
         <div className="flex flex-col items-center justify-center">
           <div className="overflow-hidden">
-            <Image
-              src={upcoming}
-              width={180}
-              height={180}
-              alt="A Chihuahua wearing pink glitter curlers, a rhinestone necklace, and long eyelashes."
-              variant="default"
-              className="load-in object-cover"
-            />
+            <LoadIn>
+              <Image
+                src={upcoming}
+                width={180}
+                height={180}
+                alt="A Chihuahua wearing pink glitter curlers, a rhinestone necklace, and long eyelashes."
+                variant="default"
+                className="object-cover"
+              />
+            </LoadIn>
           </div>
 
           <h2 className="text-card-headings text-header-nav-sm md:text-header-nav-lg mt-2 mb-4 font-(--font-bold)">
