@@ -10,7 +10,7 @@ export const workshops: Workshop[] = [
     imageSrc: haiku,
     altText: '',
     description:
-      'Cupcake ipsum dolor sit amet. Cookie jelly powder cake cotton candy dessert liquorice fruitcake. Sesame snaps cookie sweet pie muffin dragée jelly. Apple pie jelly beans brownie pudding tootsie roll topping lemon drops.',
+      'Cupcake ipsum dolor sit amet. Cookie jelly powder cake cotton candy dessert liquorice fruitcake. Sesame snaps cookie sweet pie muffin dragée jelly. Apple pie jelly beans brownie pudding tootsie roll topping lemon drops. ',
     whoFor: 'Beginners',
     skillLevel: 'All levels',
     imageClassName: 'scale-130',
@@ -19,7 +19,7 @@ export const workshops: Workshop[] = [
       price: '€250',
       nextDates: ['12 October 2026', '9 November 2026'],
       structure:
-        'A two-hour practical workshop exploring the fundamentals of haiku...',
+        'A two-hour practical workshop exploring the fundamentals of haiku... Cupcake ipsum dolor sit amet. Cookie jelly powder cake cotton candy dessert liquorice fruitcake. Sesame snaps cookie sweet pie muffin dragée jelly. Apple pie jelly beans brownie pudding tootsie roll topping lemon drops. Cupcake ipsum dolor sit amet. Cookie jelly powder cake cotton candy dessert liquorice fruitcake. Sesame snaps cookie sweet pie muffin dragée jelly. Apple pie jelly beans brownie pudding tootsie roll topping lemon drops. ',
       delivery: 'Online',
       capacity: 'Up to 12 participants',
       teamBuilding: 'Yes',

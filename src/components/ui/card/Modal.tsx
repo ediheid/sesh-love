@@ -42,7 +42,7 @@ const Modal = ({ isOpen, onClose, content }: ModalProps) => {
       onClick={onClose}
     >
       <div
-        className="border-card-border relative w-full max-w-2xl bg-white p-8 text-black"
+        className="border-card-border relative max-h-[calc(100vh-2rem)] w-full max-w-2xl overflow-y-auto bg-white p-8 text-black"
         onClick={(event) => event.stopPropagation()}
       >
         <button
