@@ -23,7 +23,7 @@ const SuccessMessage = () => {
           {/* TEXT */}
           <div className="flex h-full flex-col pt-12">
             <p className="text-card-headings pb-3 text-lg font-(--font-bold) md:text-xl">
-              Your message is on its way!
+              Your message is the way!
             </p>
 
             <div className="mt-auto w-fit max-w-lg">
@@ -50,16 +50,14 @@ const SuccessMessage = () => {
 
           {/* PIGEON */}
           <div className="relative flex justify-center md:justify-end">
-            <LoadIn>
-              <Image
-                src={pigeon}
-                width={500}
-                height={500}
-                alt="decorative pigeon illustration"
-                variant="default"
-                className="h-auto w-full max-w-none object-contain md:mr-[-20%] md:w-[140%]"
-              />
-            </LoadIn>
+            <Image
+              src={pigeon}
+              width={500}
+              height={500}
+              alt="decorative pigeon illustration"
+              variant="default"
+              className="load-in h-auto w-full max-w-none object-contain md:mr-[-20%] md:w-[140%]"
+            />
           </div>
         </div>
 
