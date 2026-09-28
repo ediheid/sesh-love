@@ -6,13 +6,39 @@ const PAGE_HEIGHT = 842;
 const LEFT_MARGIN = 50;
 const TOP_MARGIN = 50;
 
+const TITLE_SIZE = 24;
+const AUTHOR_SIZE = 13;
+const HEADING_SIZE = 13;
 const FONT_SIZE = 11;
-const HEADING_SIZE = 16;
+
+const TITLE_SPACING = 32;
+const AUTHOR_SPACING = 24;
+const HEADING_SPACING = 18;
+const SECTION_SPACING = 20;
 const LINE_HEIGHT = 16;
 
 const MAX_CHARS_PER_LINE = 85;
 
+const RED = '#f20732';
+const BLACK = '#000000';
+
 const encoder = new TextEncoder();
+
+const hexToRgb = (hex: string) => {
+  const cleanHex = hex.replace('#', '');
+
+  return {
+    r: parseInt(cleanHex.slice(0, 2), 16) / 255,
+    g: parseInt(cleanHex.slice(2, 4), 16) / 255,
+    b: parseInt(cleanHex.slice(4, 6), 16) / 255,
+  };
+};
+
+const createColorCommand = (hex: string) => {
+  const { r, g, b } = hexToRgb(hex);
+
+  return `${r.toFixed(3)} ${g.toFixed(3)} ${b.toFixed(3)} rg`;
+};
 
 const escapePdfText = (text: string) => {
   return text
@@ -49,12 +75,23 @@ const wrapText = (text: string, maxCharacters: number) => {
   return lines;
 };
 
-const createHeadingCommands = (text: string, y: number) => {
+const createTextCommand = (
+  text: string,
+  x: number,
+  y: number,
+  fontSize: number,
+  color = BLACK,
+) => {
   return `BT
-/F1 ${HEADING_SIZE} Tf
-${LEFT_MARGIN} ${y} Td
+/F1 ${fontSize} Tf
+${createColorCommand(color)}
+${x} ${y} Td
 (${escapePdfText(text)}) Tj
 ET`;
+};
+
+const createHeadingCommands = (text: string, y: number) => {
+  return createTextCommand(text, LEFT_MARGIN, y, HEADING_SIZE, RED);
 };
 
 const createParagraphCommands = (text: string, y: number) => {
@@ -66,11 +103,7 @@ const createParagraphCommands = (text: string, y: number) => {
 
   for (const line of lines) {
     commands.push(
-      `BT
-/F1 ${FONT_SIZE} Tf
-${LEFT_MARGIN} ${currentY} Td
-(${escapePdfText(line)}) Tj
-ET`,
+      createTextCommand(line, LEFT_MARGIN, currentY, FONT_SIZE, BLACK),
     );
 
     currentY -= LINE_HEIGHT;
@@ -87,57 +120,76 @@ const createPageContent = (content: CardContent) => {
 
   let y = PAGE_HEIGHT - TOP_MARGIN;
 
+  /*
+   * Title
+   */
+
   commands.push(
-    `BT
-/F1 24 Tf
-${LEFT_MARGIN} ${y} Td
-(${escapePdfText(content.title)}) Tj
-ET`,
+    createTextCommand(content.title, LEFT_MARGIN, y, TITLE_SIZE, BLACK),
   );
 
-  y -= 40;
+  y -= TITLE_SPACING;
 
-  commands.push(createHeadingCommands('About', y));
+  /*
+   * Author
+   */
 
-  y -= 24;
+  commands.push(createTextCommand('by Sesh', LEFT_MARGIN, y, AUTHOR_SIZE, RED));
+
+  y -= AUTHOR_SPACING;
+
+  /*
+   * Description
+   */
 
   const description = createParagraphCommands(content.description, y);
 
   commands.push(...description.commands);
-  y = description.nextY - 15;
+
+  y = description.nextY - SECTION_SPACING;
+
+  /*
+   * Who it's for
+   */
 
   commands.push(createHeadingCommands("Who it's for", y));
 
-  y -= 24;
+  y -= HEADING_SPACING;
 
   const whoFor = createParagraphCommands(content.whoFor, y);
 
   commands.push(...whoFor.commands);
-  y = whoFor.nextY - 15;
+
+  y = whoFor.nextY - SECTION_SPACING;
+
+  /*
+   * Skill level
+   */
 
   commands.push(createHeadingCommands('Skill level', y));
 
-  y -= 24;
+  y -= HEADING_SPACING;
 
   const skillLevel = createParagraphCommands(content.skillLevel, y);
 
   commands.push(...skillLevel.commands);
-  y = skillLevel.nextY - 25;
 
-  commands.push(createHeadingCommands('Details', y));
+  y = skillLevel.nextY - SECTION_SPACING;
 
-  y -= 30;
+  /*
+   * Details
+   */
 
   const addSection = (heading: string, text: string) => {
     commands.push(createHeadingCommands(heading, y));
 
-    y -= 22;
+    y -= HEADING_SPACING;
 
     const result = createParagraphCommands(text, y);
 
     commands.push(...result.commands);
 
-    y = result.nextY - 15;
+    y = result.nextY - SECTION_SPACING;
   };
 
   addSection('Price', content.modal.price);
@@ -246,6 +298,7 @@ export const generatePdf = async (content: CardContent) => {
   const link = document.createElement('a');
 
   link.href = url;
+
   link.download = `${content.title
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
