@@ -14,6 +14,18 @@ export const workshops: Workshop[] = [
     whoFor: 'Beginners',
     skillLevel: 'All levels',
     imageClassName: 'scale-130',
+
+    modal: {
+      price: '€250',
+      nextDates: ['12 October 2026', '9 November 2026'],
+      structure:
+        'A two-hour practical workshop exploring the fundamentals of haiku...',
+      delivery: 'Online',
+      capacity: 'Up to 12 participants',
+      teamBuilding: 'Yes',
+      contact: 'hello@example.com',
+      pdfUrl: '/pdfs/hello-haiku.pdf',
+    },
   },
   {
     title: 'naming simulator',
@@ -24,6 +36,18 @@ export const workshops: Workshop[] = [
     whoFor: 'Experienced practitioners',
     skillLevel: 'Advanced',
     imageClassName: 'scale-135 translate-y-[15px]',
+
+    modal: {
+      price: '€350',
+      nextDates: ['20 October 2026'],
+      structure:
+        'A full-day workshop focused on naming processes and practical exercises...',
+      delivery: 'Online',
+      capacity: 'Up to 10 participants',
+      teamBuilding: 'Yes',
+      contact: 'hello@example.com',
+      pdfUrl: '/pdfs/naming-simulator.pdf',
+    },
   },
   {
     title: 'writing challenge',
@@ -34,6 +58,18 @@ export const workshops: Workshop[] = [
     whoFor: 'Everyone',
     skillLevel: 'All levels',
     imageClassName: 'scale-80',
+
+    modal: {
+      price: '€350',
+      nextDates: ['20 October 2026'],
+      structure:
+        'A full-day workshop focused on naming processes and practical exercises...',
+      delivery: 'In person',
+      capacity: 'Up to 10 participants',
+      teamBuilding: 'Yes',
+      contact: 'hello@example.com',
+      pdfUrl: '/pdfs/writing-challenge.pdf',
+    },
   },
   {
     title: 'astro witch',
@@ -44,5 +80,17 @@ export const workshops: Workshop[] = [
     whoFor: 'Everyone',
     skillLevel: 'All levels',
     imageClassName: 'scale-80',
+
+    modal: {
+      price: '€350',
+      nextDates: ['20 October 2026'],
+      structure:
+        'A full-day workshop focused on naming processes and practical exercises...',
+      delivery: 'In person',
+      capacity: 'Up to 10 participants',
+      teamBuilding: 'Yes',
+      contact: 'hello@example.com',
+      pdfUrl: '/pdfs/astro-witch.pdf',
+    },
   },
 ];

@@ -1,4 +1,5 @@
 import type { Training } from './types';
+
 import headline from '../tranings/images/headline.webp';
 import creative from '../tranings/images/creative.webp';
 import copy from '../tranings/images/copy.webp';
@@ -13,7 +14,20 @@ export const trainings: Training[] = [
     whoFor: 'Beginners',
     skillLevel: 'All levels',
     imageClassName: 'scale-85',
+
+    modal: {
+      price: '€250',
+      nextDates: ['12 October 2026', '9 November 2026'],
+      structure:
+        'A practical training session focused on developing stronger headline strategies and applying them to real-world briefs.',
+      delivery: 'Online',
+      capacity: 'Up to 12 participants',
+      teamBuilding: 'Yes',
+      contact: 'hello@example.com',
+      pdfUrl: '/pdfs/headline-strategies.pdf',
+    },
   },
+
   {
     title: 'creative concepts',
     imageSrc: creative,
@@ -23,7 +37,20 @@ export const trainings: Training[] = [
     whoFor: 'Beginners',
     skillLevel: 'All levels',
     imageClassName: 'scale-85',
+
+    modal: {
+      price: '€300',
+      nextDates: ['20 October 2026', '17 November 2026'],
+      structure:
+        'An interactive training session exploring creative concept development, idea generation, and practical exercises.',
+      delivery: 'Online',
+      capacity: 'Up to 12 participants',
+      teamBuilding: 'Yes',
+      contact: 'hello@example.com',
+      pdfUrl: '/pdfs/creative-concepts.pdf',
+    },
   },
+
   {
     title: 'copy mentoring',
     imageSrc: copy,
@@ -33,5 +60,17 @@ export const trainings: Training[] = [
     whoFor: 'Beginners',
     skillLevel: 'All levels',
     imageClassName: 'scale-90 pt-6',
+
+    modal: {
+      price: '€350',
+      nextDates: ['27 October 2026', '24 November 2026'],
+      structure:
+        'A mentoring-based training programme focused on developing copywriting skills through practical feedback and guided exercises.',
+      delivery: 'In person',
+      capacity: 'Up to 8 participants',
+      teamBuilding: 'Yes',
+      contact: 'hello@example.com',
+      pdfUrl: '/pdfs/copy-mentoring.pdf',
+    },
   },
 ];
