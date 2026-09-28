@@ -381,11 +381,8 @@ export const generatePdf = async (content: CardContent) => {
   const link = document.createElement('a');
 
   link.href = url;
-
-  link.download = `${content.title
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '')}.pdf`;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
 
   document.body.appendChild(link);
 
@@ -393,9 +390,7 @@ export const generatePdf = async (content: CardContent) => {
 
   document.body.removeChild(link);
 
-  URL.revokeObjectURL(url);
-
-  await new Promise<void>((resolve) => {
-    setTimeout(resolve, 0);
-  });
+  setTimeout(() => {
+    URL.revokeObjectURL(url);
+  }, 1000);
 };
