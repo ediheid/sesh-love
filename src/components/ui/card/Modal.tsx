@@ -36,14 +36,14 @@ const Modal = ({ isOpen, onClose, content }: ModalProps) => {
 
   return (
     <div
-      className="fixed inset-0 z-9999 flex items-center justify-center bg-black/80 p-4"
+      className="fixed inset-0 z-9999 overflow-y-auto bg-black/80 p-4"
       role="dialog"
       aria-modal="true"
       aria-labelledby={modalTitleId}
       onClick={onClose}
     >
       <div
-        className="border-card-border relative max-h-[calc(100vh-2rem)] w-full max-w-2xl overflow-y-auto bg-white p-8 text-black"
+        className="border-card-border relative mx-auto w-full max-w-2xl bg-white p-8 text-black"
         onClick={(event) => event.stopPropagation()}
       >
         <button
