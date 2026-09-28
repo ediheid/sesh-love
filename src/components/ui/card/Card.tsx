@@ -5,16 +5,7 @@ import Modal from './Modal';
 
 type CardProps = CardContent;
 
-const Card = ({
-  title,
-  imageSrc,
-  altText,
-  description,
-  whoFor,
-  skillLevel,
-  imageClassName,
-  modal,
-}: CardProps) => {
+const Card = (content: CardProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -23,35 +14,35 @@ const Card = ({
         <div className="flex flex-col items-center justify-center">
           <div className="overflow-hidden">
             <Image
-              src={imageSrc}
+              src={content.imageSrc}
               width={200}
               height={200}
-              alt={altText}
+              alt={content.altText}
               variant="default"
-              className={`load-in object-cover ${imageClassName ?? ''}`}
+              className={`load-in object-cover ${content.imageClassName ?? ''}`}
             />
           </div>
 
           <h2 className="text-card-headings text-header-nav-sm md:text-header-nav-lg mb-3 font-(--font-bold)">
-            {title}
+            {content.title}
           </h2>
         </div>
 
-        <p className="mb-2 leading-relaxed">{description}</p>
+        <p className="mb-2 leading-relaxed">{content.description}</p>
 
         <div className="w-full">
           <div className="mb-1 leading-relaxed">
             <h3 className="text-card-headings font-(--font-bold) tracking-wide">
               Who it's for:
             </h3>
-            <span>{whoFor}</span>
+            <span>{content.whoFor}</span>
           </div>
 
           <div className="mb-4 leading-relaxed">
             <h3 className="text-card-headings font-(--font-bold) tracking-wide">
               Skill level:
             </h3>
-            <span>{skillLevel}</span>
+            <span>{content.skillLevel}</span>
           </div>
         </div>
 
@@ -71,8 +62,7 @@ const Card = ({
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        title={title}
-        data={modal}
+        content={content}
       />
     </>
   );

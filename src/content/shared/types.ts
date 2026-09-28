@@ -6,7 +6,6 @@ export interface ModalData {
   capacity: string;
   teamBuilding: string;
   contact: string;
-  pdfUrl: string;
 }
 
 export interface CardContent {

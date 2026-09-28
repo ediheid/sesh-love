@@ -1,24 +1,24 @@
-import type { ModalData } from '../../../content/shared/types';
+import type { CardContent } from '../../../content/shared/types';
+import { generatePdf } from '../../../utils/generatePdf';
 
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  title: string;
-  data: ModalData;
+  content: CardContent;
 }
 
-const Modal = ({ isOpen, onClose, title, data }: ModalProps) => {
+const Modal = ({ isOpen, onClose, content }: ModalProps) => {
   if (!isOpen) {
     return null;
   }
 
-  const modalTitleId = `modal-title-${title
+  const modalTitleId = `modal-title-${content.title
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')}`;
 
   return (
     <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 p-4"
+      className="fixed inset-0 z-9999 flex items-center justify-center bg-black/80 p-4"
       role="dialog"
       aria-modal="true"
       aria-labelledby={modalTitleId}
@@ -38,20 +38,20 @@ const Modal = ({ isOpen, onClose, title, data }: ModalProps) => {
         </button>
 
         <h2 id={modalTitleId} className="mb-4 text-2xl font-bold">
-          {title}
+          {content.title}
         </h2>
 
         <div className="space-y-4">
           <div>
             <h3 className="font-bold">Price</h3>
-            <p>{data.price}</p>
+            <p>{content.modal.price}</p>
           </div>
 
           <div>
             <h3 className="font-bold">Next dates</h3>
 
             <ul>
-              {data.nextDates.map((date) => (
+              {content.modal.nextDates.map((date) => (
                 <li key={date}>{date}</li>
               ))}
             </ul>
@@ -59,37 +59,32 @@ const Modal = ({ isOpen, onClose, title, data }: ModalProps) => {
 
           <div>
             <h3 className="font-bold">Structure</h3>
-            <p>{data.structure}</p>
+            <p>{content.modal.structure}</p>
           </div>
 
           <div>
             <h3 className="font-bold">Delivery</h3>
-            <p>{data.delivery}</p>
+            <p>{content.modal.delivery}</p>
           </div>
 
           <div>
             <h3 className="font-bold">Capacity</h3>
-            <p>{data.capacity}</p>
+            <p>{content.modal.capacity}</p>
           </div>
 
           <div>
             <h3 className="font-bold">Team building</h3>
-            <p>{data.teamBuilding}</p>
+            <p>{content.modal.teamBuilding}</p>
           </div>
 
           <div>
             <h3 className="font-bold">Contact</h3>
-            <p>{data.contact}</p>
+            <p>{content.modal.contact}</p>
           </div>
 
-          <a
-            href={data.pdfUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-bold underline"
-          >
+          <button type="button" onClick={() => generatePdf(content)}>
             Download PDF
-          </a>
+          </button>
         </div>
       </div>
     </div>
