@@ -1,4 +1,5 @@
 import type { CardContent } from '../../../content/shared/types';
+import { useScrollLock } from '../../../hooks/useScrollLock';
 import { generatePdf } from '../../../utils/generatePdf';
 
 interface ModalProps {
@@ -8,6 +9,8 @@ interface ModalProps {
 }
 
 const Modal = ({ isOpen, onClose, content }: ModalProps) => {
+  useScrollLock(isOpen);
+
   if (!isOpen) {
     return null;
   }
