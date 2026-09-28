@@ -24,7 +24,6 @@ export const trainings: Training[] = [
       capacity: 'Up to 12 participants',
       teamBuilding: 'Yes',
       contact: 'hello@example.com',
-      pdfUrl: '/pdfs/headline-strategies.pdf',
     },
   },
 
@@ -47,7 +46,6 @@ export const trainings: Training[] = [
       capacity: 'Up to 12 participants',
       teamBuilding: 'Yes',
       contact: 'hello@example.com',
-      pdfUrl: '/pdfs/creative-concepts.pdf',
     },
   },
 
@@ -70,7 +68,6 @@ export const trainings: Training[] = [
       capacity: 'Up to 8 participants',
       teamBuilding: 'Yes',
       contact: 'hello@example.com',
-      pdfUrl: '/pdfs/copy-mentoring.pdf',
     },
   },
 ];

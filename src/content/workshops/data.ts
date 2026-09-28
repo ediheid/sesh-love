@@ -24,7 +24,6 @@ export const workshops: Workshop[] = [
       capacity: 'Up to 12 participants',
       teamBuilding: 'Yes',
       contact: 'hello@example.com',
-      pdfUrl: '/pdfs/hello-haiku.pdf',
     },
   },
   {
@@ -46,7 +45,6 @@ export const workshops: Workshop[] = [
       capacity: 'Up to 10 participants',
       teamBuilding: 'Yes',
       contact: 'hello@example.com',
-      pdfUrl: '/pdfs/naming-simulator.pdf',
     },
   },
   {
@@ -68,7 +66,6 @@ export const workshops: Workshop[] = [
       capacity: 'Up to 10 participants',
       teamBuilding: 'Yes',
       contact: 'hello@example.com',
-      pdfUrl: '/pdfs/writing-challenge.pdf',
     },
   },
   {
@@ -90,7 +87,6 @@ export const workshops: Workshop[] = [
       capacity: 'Up to 10 participants',
       teamBuilding: 'Yes',
       contact: 'hello@example.com',
-      pdfUrl: '/pdfs/astro-witch.pdf',
     },
   },
 ];
