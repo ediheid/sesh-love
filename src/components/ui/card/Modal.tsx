@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import Svg from '../../../primitives/svgs/Svgs';
 import type { CardContent } from '../../../content/shared/types';
 import { useScrollLock } from '../../../hooks/useScrollLock';
 import { generatePdf } from '../../../utils/generatePdf';
@@ -10,6 +12,18 @@ interface ModalProps {
 
 const Modal = ({ isOpen, onClose, content }: ModalProps) => {
   useScrollLock(isOpen);
+
+  const [downloaded, setDownloaded] = useState(false);
+
+  const handleDownload = async () => {
+    await generatePdf(content);
+
+    setDownloaded(true);
+
+    setTimeout(() => {
+      setDownloaded(false);
+    }, 2000);
+  };
 
   if (!isOpen) {
     return null;
@@ -28,30 +42,40 @@ const Modal = ({ isOpen, onClose, content }: ModalProps) => {
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-2xl bg-white p-8 text-black"
+        className="border-card-border relative w-full max-w-2xl bg-white p-8 text-black"
         onClick={(event) => event.stopPropagation()}
       >
         <button
           type="button"
           onClick={onClose}
           aria-label="Close modal"
-          className="absolute top-4 right-4 cursor-pointer text-2xl"
+          className="absolute top-6 right-6 cursor-pointer"
         >
-          ×
+          <Svg
+            name="closeSVG"
+            className="text-icon hover:text-icon-hover focus:text-icon-hover h-7 w-7 transition-colors"
+          />
         </button>
 
-        <h2 id={modalTitleId} className="mb-4 text-2xl font-bold">
+        <h2
+          id={modalTitleId}
+          className="text-header-nav-sm md:text-header-nav-lg mb-4 font-bold"
+        >
           {content.title}
         </h2>
 
         <div className="space-y-4">
           <div>
-            <h3 className="font-bold">Price</h3>
+            <h3 className="text-card-headings font-(--font-bold) tracking-wide">
+              Price
+            </h3>
             <p>{content.modal.price}</p>
           </div>
 
           <div>
-            <h3 className="font-bold">Next dates</h3>
+            <h3 className="text-card-headings font-(--font-bold) tracking-wide">
+              Next dates
+            </h3>
 
             <ul>
               {content.modal.nextDates.map((date) => (
@@ -61,32 +85,47 @@ const Modal = ({ isOpen, onClose, content }: ModalProps) => {
           </div>
 
           <div>
-            <h3 className="font-bold">Structure</h3>
+            <h3 className="text-card-headings font-(--font-bold) tracking-wide">
+              Structure
+            </h3>
             <p>{content.modal.structure}</p>
           </div>
 
           <div>
-            <h3 className="font-bold">Delivery</h3>
+            <h3 className="text-card-headings font-(--font-bold) tracking-wide">
+              Delivery
+            </h3>
             <p>{content.modal.delivery}</p>
           </div>
 
           <div>
-            <h3 className="font-bold">Capacity</h3>
+            <h3 className="text-card-headings font-(--font-bold) tracking-wide">
+              Capacity
+            </h3>
             <p>{content.modal.capacity}</p>
           </div>
 
           <div>
-            <h3 className="font-bold">Team building</h3>
+            <h3 className="text-card-headings font-(--font-bold) tracking-wide">
+              Team building
+            </h3>
             <p>{content.modal.teamBuilding}</p>
           </div>
 
           <div>
-            <h3 className="font-bold">Contact</h3>
+            <h3 className="text-card-headings font-(--font-bold) tracking-wide">
+              Contact
+            </h3>
             <p>{content.modal.contact}</p>
           </div>
 
-          <button type="button" onClick={() => generatePdf(content)}>
-            Download PDF
+          <button
+            type="button"
+            onClick={handleDownload}
+            disabled={downloaded}
+            className="text-modal-button-text hover:text-modal-button-text-hover focus:text-modal-button-text-hover bg-modal-button-background hover:bg-modal-button-hover-background duration-fast ease-standard cursor-pointer px-4 py-2 font-(--font-bold) tracking-wide transition-colors disabled:cursor-default"
+          >
+            {downloaded ? '✓ PDF downloaded' : 'Download PDF'}
           </button>
         </div>
       </div>

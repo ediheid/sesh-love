@@ -234,7 +234,7 @@ ${xrefOffset}
   return pdf;
 };
 
-export const generatePdf = (content: CardContent) => {
+export const generatePdf = async (content: CardContent) => {
   const pdf = createPdf(content);
 
   const blob = new Blob([encoder.encode(pdf)], {
@@ -258,4 +258,8 @@ export const generatePdf = (content: CardContent) => {
   document.body.removeChild(link);
 
   URL.revokeObjectURL(url);
+
+  await new Promise<void>((resolve) => {
+    setTimeout(resolve, 0);
+  });
 };

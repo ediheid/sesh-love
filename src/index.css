@@ -50,6 +50,12 @@
   --color-card-button-background: var(--color-surface);
   --color-card-button-hover-background: var(--color-primary);
 
+  /* Modal */
+  --color-modal-button-text: var(--color-surface);
+  --color-modal-button-text-hover: var(--color-surface);
+  --color-modal-button-background: var(--color-primary);
+  --color-modal-button-hover-background: var(--color-accent);
+
   /* Form */
   --color-input-border: var(--color-primary);
   --color-input-border-highlight: var(--color-danger);
