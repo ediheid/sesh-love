@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom';
-import LoadIn from '../../components/ui/animation/LoadIn';
 import Image from '../../primitives/image/Image';
 import pigeon from '../../assets/images/pigeon.webp';
 import Svg from '../../primitives/svgs/Svgs';
